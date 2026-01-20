@@ -62,8 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const maxScroll = document.body.scrollHeight - window.innerHeight;
-            const progress = maxScroll > 0 ? window.scrollY / maxScroll : 0;
+const scrollElement = document.documentElement;
+const maxScroll = scrollElement.scrollHeight - window.innerHeight;
+const currentScroll = window.pageYOffset || scrollElement.scrollTop || 0;
+const progress = maxScroll > 0 ? currentScroll / maxScroll : 0;
+          
             const x = 50 + Math.sin(progress * Math.PI * 2) * 12;
             const y = 35 + progress * 30;
 
