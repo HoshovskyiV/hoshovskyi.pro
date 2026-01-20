@@ -1,7 +1,5 @@
 # Hoshovskyi.pro
 
-
-
 Персональний сайт креативного фахівця з відеовиробництва та AI-технологій.
 
 ## Про проект
@@ -32,22 +30,17 @@
 ### Отримання списку реєстрацій
 
 Після створення KV у Vercel можна запитати список реєстрацій через ендпоінт:
-
-```
 GET /api/registrations
 Authorization: Bearer <REGISTRATIONS_API_KEY>
-```
-
+code
+Code
 ### CSV для Google Sheets
 
 Щоб підключити таблицю, використайте CSV-ендпоінт і передайте ключ як параметр:
-
-```
 GET /api/registrations-csv?key=<REGISTRATIONS_API_KEY>
-```
-
+code
+Code
 У Google Sheets можна вставити формулу:
-
-```
 =IMPORTDATA("https://hoshovskyi.pro/api/registrations-csv?key=<REGISTRATIONS_API_KEY>")
-```
+code
+Code
