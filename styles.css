@@ -27,6 +27,20 @@ body {
     background-color: var(--bg-color);
 }
 
+.pixel-trail-dot {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: linear-gradient(135deg, rgba(253, 121, 168, 0.9), rgba(0, 206, 201, 0.9));
+    border-radius: 1px;
+    pointer-events: none;
+    z-index: 2000;
+    opacity: 0.85;
+    transform: translate(-50%, -50%);
+    image-rendering: pixelated;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
