@@ -210,9 +210,54 @@ nav ul li a:hover:after {
     margin-bottom: 30px;
 }
 
+.hero-meta {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    font-weight: 500;
+}
+
+.hero-meta i {
+    margin-right: 8px;
+    color: var(--secondary-color);
+}
+
 /* Секція вебінару */
 .webinar {
     background-color: #f9f9f9;
+}
+
+.section-subtitle {
+    max-width: 720px;
+    margin: -20px auto 0;
+    text-align: center;
+    color: #555;
+}
+
+.topics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.topic-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.topic-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.topic-card ul {
+    padding-left: 20px;
+    list-style-type: disc;
 }
 
 .webinar-grid {
@@ -335,6 +380,51 @@ nav ul li a:hover:after {
 
 .webinar-help h4 {
     margin-bottom: 10px;
+}
+
+.payment-section {
+    background: var(--light-color);
+    text-align: center;
+}
+
+.payment-card {
+    max-width: 500px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.price-tag {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin: 20px 0;
+}
+
+.btn-full {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.payment-section .form-group {
+    margin-bottom: 15px;
+}
+
+.payment-section .form-group input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+.form-error {
+    color: #d63031;
+    margin-top: 10px;
+    display: none;
 }
 
 /* Секція послуг */
