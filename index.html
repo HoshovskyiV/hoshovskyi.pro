@@ -8,33 +8,93 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
+    <div class="announcement">
+        <div class="container announcement__inner">
+            <span class="announcement__badge">Нова лекція 2025</span>
+            <p>Старт продажів уже скоро. Залишайтеся на зв'язку, щоб отримати перші місця.</p>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="container site-header__inner">
             <div class="logo">HOSHOVSKYI</div>
             <nav>
                 <ul>
                     <li><a href="#about">Про лектора</a></li>
                     <li><a href="#program">Програма</a></li>
-                    <li><a href="#registration">Реєстрація та Оплата</a></li>
+                    <li><a href="#registration">Реєстрація</a></li>
                 </ul>
             </nav>
+            <a href="#registration" class="btn btn-ghost">Зайняти місце</a>
         </div>
     </header>
 
     <section class="hero">
         <div class="liquid-bg" id="liquidBg"></div>
-        <div class="container">
-            <div class="hero-content">
-                <h1>Генерація відео з AI: Погляд режисера</h1>
-                <p>Як створювати кінематографічний контент, розуміючи принципи кіномови, а не просто інтерфейси інструментів.</p>
-                <div class="hero-meta">
+        <div class="container hero__grid">
+            <div class="hero__content">
+                <div class="hero__eyebrow">AI відеопродакшн • Режисерський погляд</div>
+                <h1>Генерація відео з AI, яка звучить як справжнє кіно</h1>
+                <p>Від ідеї до фінального кадру: як створювати переконливі відео, керуючись правилами режисури, монтажу та кіномови, а не хайповими інтерфейсами.</p>
+                <div class="hero__meta">
                     <span><i class="fas fa-calendar"></i> Дата уточнюється</span>
                     <span><i class="fas fa-clock"></i> 2 години + Q&amp;A</span>
+                    <span><i class="fas fa-video"></i> Онлайн трансляція</span>
                 </div>
-                <a href="#registration" class="btn">Зареєструватися</a>
+                <div class="hero__actions">
+                    <a href="#registration" class="btn">Зареєструватися</a>
+                    <a href="#program" class="btn btn-secondary">Дізнатися програму</a>
+                </div>
+                <div class="hero__stats">
+                    <div>
+                        <h3>17+</h3>
+                        <p>років у режисурі</p>
+                    </div>
+                    <div>
+                        <h3>120+</h3>
+                        <p>кампаній у портфоліо</p>
+                    </div>
+                    <div>
+                        <h3>AI Lab</h3>
+                        <p>експерт Дія.Бізнес</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hero__card">
+                <div class="hero__card-header">
+                    <span class="badge">Формат</span>
+                    <h2>Інтенсив для креативників</h2>
+                </div>
+                <div class="hero__card-body">
+                    <div class="hero__card-row">
+                        <i class="fas fa-layer-group"></i>
+                        <div>
+                            <h4>4 блоки</h4>
+                            <p>від сценарію до звуку</p>
+                        </div>
+                    </div>
+                    <div class="hero__card-row">
+                        <i class="fas fa-bolt"></i>
+                        <div>
+                            <h4>Понад 25 інструментів</h4>
+                            <p>Sora, Runway, Midjourney, ElevenLabs та інші</p>
+                        </div>
+                    </div>
+                    <div class="hero__card-row">
+                        <i class="fas fa-star"></i>
+                        <div>
+                            <h4>Практичні кейси</h4>
+                            <p>живі розбори та шаблони</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero__card-footer">
+                    <a href="#registration" class="btn btn-full">Зайняти місце</a>
+                    <p class="hero__card-note">Перші 50 місць — доступ до запису.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -43,14 +103,9 @@
         <defs>
             <filter id="metallic-flow" x="-20%" y="-20%" width="140%" height="140%">
                 <feTurbulence type="fractalNoise" baseFrequency="0.01" numOctaves="3" result="noise">
-                    <animate
-                        attributeName="baseFrequency"
-                        values="0.01; 0.015; 0.01"
-                        dur="18s"
-                        repeatCount="indefinite"
-                    />
+                    <animate attributeName="baseFrequency" values="0.01; 0.015; 0.01" dur="18s" repeatCount="indefinite" />
                 </feTurbulence>
-                <feDisplacementMap in="SourceGraphic" in2="noise" scale="100" xChannelSelector="R" yChannelSelector="G" result="displaced" />
+                <feDisplacementMap in="SourceGraphic" in2="noise" scale="90" xChannelSelector="R" yChannelSelector="G" result="displaced" />
                 <feGaussianBlur in="displaced" stdDeviation="12" result="blurred" />
                 <feColorMatrix
                     in="blurred"
@@ -67,66 +122,138 @@
     </svg>
 
     <section id="about" class="about">
-        <div class="container">
-            <div class="about-grid">
-                <div class="about-content">
-                    <h2>Хто спікер?</h2>
-                    <p><strong>Василь Гошовський</strong> — рекламний режисер із 17-річним стажем, креативний директор Multimedia Lab та AI-консультант Дія.Бізнес.</p>
-                    <p>Я почав знімати відео ще за 15 років до появи генеративного AI. Мій підхід базується не на хайпі навколо нових нейромереж, а на глибокому розумінні режисури, монтажу та сценарію.</p>
-                    <p>На лекції я розкажу, як застосовувати AI крізь призму професійного кіновиробництва, щоб отримувати контрольований та якісний результат.</p>
+        <div class="container about__grid">
+            <div class="about__content">
+                <h2>Хто спікер?</h2>
+                <p><strong>Василь Гошовський</strong> — рекламний режисер із 17-річним стажем, креативний директор Multimedia Lab та AI-консультант Дія.Бізнес.</p>
+                <p>Працюю з брендами та продакшенами, щоб AI ставав інструментом, а не випадковою генерацією. На лекції покажу, як керувати кіномовою, ритмом та емоцією у кожному кадрі.</p>
+                <div class="about__highlights">
+                    <div>
+                        <h4>Креативний директор</h4>
+                        <p>Multimedia Lab</p>
+                    </div>
+                    <div>
+                        <h4>AI-консультант</h4>
+                        <p>Дія.Бізнес</p>
+                    </div>
+                    <div>
+                        <h4>Режисер</h4>
+                        <p>17 років у рекламі</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about__card">
+                <h3>Що ви заберете після лекції</h3>
+                <ul>
+                    <li>Систему для створення AI-відео від ідеї до фіналу.</li>
+                    <li>Пакет промптів і сценарних шаблонів.</li>
+                    <li>Чітке розуміння, як відрізнити кіно від "нейровідео".</li>
+                    <li>Підбірку актуальних інструментів 2025 року.</li>
+                </ul>
+                <div class="about__cta">
+                    <span class="price">500 ₴</span>
+                    <span class="price-note">Запис + Q&amp;A доступні після оплати</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="program" class="webinar">
+    <section id="program" class="program">
         <div class="container">
             <h2>Про що ця лекція?</h2>
             <p class="section-subtitle">Інструменти змінюються щодня. Принципи залишаються. Ми розберемо повний цикл створення відео.</p>
+            <div class="program__grid">
+                <article class="program__card">
+                    <div class="program__icon"><i class="fas fa-clapperboard"></i></div>
+                    <h3>Філософія та підхід</h3>
+                    <p>Як мислити режисером, будувати оповідання та уникати "моторошної долини".</p>
+                    <ul>
+                        <li>Кіномова для AI-промптів.</li>
+                        <li>Ритм, композиція, емоційний акцент.</li>
+                        <li>Приклади з реальної реклами.</li>
+                    </ul>
+                </article>
+                <article class="program__card">
+                    <div class="program__icon"><i class="fas fa-sitemap"></i></div>
+                    <h3>Сценарій і препродакшн</h3>
+                    <p>Підготовка сценарію, сторібордів та референсів у співпраці з AI.</p>
+                    <ul>
+                        <li>ChatGPT, Claude та GPTs.</li>
+                        <li>Midjourney, Freepik, DALL·E.</li>
+                        <li>Логіка монтажних блоків.</li>
+                    </ul>
+                </article>
+                <article class="program__card">
+                    <div class="program__icon"><i class="fas fa-video"></i></div>
+                    <h3>Генерація та контроль</h3>
+                    <p>Як керувати рухом камери, світлом та героєм у кадрі.</p>
+                    <ul>
+                        <li>Sora, Runway, Kling, Veo.</li>
+                        <li>Пан, тилт, зум та монтаж.</li>
+                        <li>Inpainting, retouch, стилізація.</li>
+                    </ul>
+                </article>
+                <article class="program__card">
+                    <div class="program__icon"><i class="fas fa-headphones"></i></div>
+                    <h3>Звук і постпродакшн</h3>
+                    <p>Озвучення, ліпсінк та звук як половина емоції.</p>
+                    <ul>
+                        <li>ElevenLabs та voice cloning.</li>
+                        <li>Video-to-Audio та SFX.</li>
+                        <li>PixVerse, Hedra, інструменти 2025.</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
 
-            <div class="topics-grid">
-                <div class="topic-card">
-                    <h3>🎬 Філософія та Підхід</h3>
-                    <ul>
-                        <li>Чому вчити інтерфейси — тупиковий шлях.</li>
-                        <li>Як знання кіномови допомагає писати кращі промпти.</li>
-                        <li>Уникнення ефекту "моторошної долини".</li>
-                    </ul>
+    <section class="format">
+        <div class="container format__grid">
+            <div>
+                <h2>Формат та темп</h2>
+                <p>Від теорії до практики за 120 хвилин. На кожному етапі — розбір кейсів та прикладів.</p>
+            </div>
+            <div class="format__cards">
+                <div class="format__card">
+                    <h4>🔥 Live session</h4>
+                    <p>Онлайн-лекція з можливістю ставити питання.</p>
                 </div>
-                <div class="topic-card">
-                    <h3>🛠 Workflow (Робочий процес)</h3>
-                    <ul>
-                        <li>Від сирої ідеї до фінального експорту.</li>
-                        <li>Робота зі сценарієм: ChatGPT, Claude та спеціальні GPTs.</li>
-                        <li>Генерація референсів та кадрів (Midjourney, Freepik).</li>
-                    </ul>
+                <div class="format__card">
+                    <h4>📘 Матеріали</h4>
+                    <p>Конспект + список інструментів та промптів.</p>
                 </div>
-                <div class="topic-card">
-                    <h3>🎥 Генерація Відео</h3>
-                    <ul>
-                        <li>Огляд моделей: Sora, Kling, Runway, Veo.</li>
-                        <li>Контроль руху камери (Zoom, Pan, Tilt) в інструментах типу Higgsfield.</li>
-                        <li>Редагування відео (Inpainting/Retouch) та додавання об'єктів.</li>
-                    </ul>
-                </div>
-                <div class="topic-card">
-                    <h3>🔊 Звук та Ліпсінк</h3>
-                    <ul>
-                        <li>Клонування голосу та емоційна озвучка (ElevenLabs).</li>
-                        <li>Створення звукових ефектів з відео (Video-to-Audio).</li>
-                        <li>Синхронізація губ (Lipsync): PixVerse, Hedra.</li>
-                    </ul>
+                <div class="format__card">
+                    <h4>💬 Q&amp;A</h4>
+                    <p>Відповіді на ваші кейси в прямому ефірі.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="registration" class="payment-section">
-        <div class="container">
-            <div class="payment-card">
+        <div class="container payment-section__grid">
+            <div class="payment-section__content">
                 <h2>Реєстрація на лекцію</h2>
+                <p>Після оплати ви отримаєте доступ до трансляції та запису. Місця обмежені, щоб залишити час на Q&amp;A.</p>
+                <div class="payment-section__list">
+                    <div>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Запис + матеріали після ефіру</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Оновлюваний список AI-інструментів</span>
+                    </div>
+                    <div>
+                        <i class="fas fa-check-circle"></i>
+                        <span>Підтримка і відповіді на питання</span>
+                    </div>
+                </div>
+            </div>
+            <div class="payment-card">
+                <h3>Вартість участі</h3>
                 <div class="price-tag">500 ₴</div>
-                <p>Після оплати ви отримаєте доступ до трансляції.</p>
+                <p class="price-subtitle">Оплата через Monobank</p>
 
                 <form id="payment-form">
                     <div class="form-group">
@@ -138,13 +265,25 @@
                     <button type="submit" class="btn btn-full" id="pay-btn">Оплатити через Monobank</button>
                 </form>
                 <div id="error-message" class="form-error" aria-live="polite"></div>
+                <p class="payment-note">Після оплати ви отримаєте лист з доступом до події.</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2025 Василь Гошовський. Всі права захищені.</p>
+        <div class="container footer__grid">
+            <div>
+                <div class="footer-logo">HOSHOVSKYI</div>
+                <p>AI Video Generation · Режисерський підхід до майбутнього відеопродакшну.</p>
+            </div>
+            <div class="footer__links">
+                <a href="#about">Про лектора</a>
+                <a href="#program">Програма</a>
+                <a href="#registration">Реєстрація</a>
+            </div>
+            <div class="footer__meta">
+                <p>&copy; 2025 Василь Гошовський. Всі права захищені.</p>
+            </div>
         </div>
     </footer>
 
