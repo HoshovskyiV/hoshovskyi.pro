@@ -16,3 +16,21 @@
 
 - Email: contact@hoshovskyi.pro
 - Місце розташування: Івано-Франківська область, Україна
+
+## Оплата та реєстрації
+
+### Змінні середовища
+
+- `MONOBANK_TOKEN` — токен Monobank Merchant API.
+- `MONOBANK_AMOUNT` — сума в копійках (наприклад, `100` = 1 грн).
+- `KV_REST_API_URL` та `KV_REST_API_TOKEN` — автоматично додаються після створення Vercel KV.
+- `REGISTRATIONS_API_KEY` — ключ доступу до списку реєстрацій.
+
+### Отримання списку реєстрацій
+
+Після створення KV у Vercel можна запитати список реєстрацій через ендпоінт:
+
+```
+GET /api/registrations
+Authorization: Bearer <REGISTRATIONS_API_KEY>
+```
