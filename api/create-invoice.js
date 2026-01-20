@@ -74,7 +74,7 @@ export default async function handler(req, res) {
             },
           ],
         },
-        redirectUrl: 'https://hoshovskyi.pro/success',
+        redirectUrl: 'https://hoshovskyi.pro/success.html',
         webHookUrl: 'https://hoshovskyi.pro/api/webhook',
         validity: 3600,
       }),
