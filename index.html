@@ -18,8 +18,9 @@
                 <ul>
                     <li><a href="#lecture">Опис лекції</a></li>
                     <li><a href="#payment">Оплата</a></li>
-                    <li><a href="#registration">Реєстрація</a></li>
                     <li><a href="#about">Про мене</a></li>
+                    <li><a href="#process">Процес</a></li>
+                    <li><a href="#registration">Реєстрація</a></li>
                 </ul>
             </nav>
             <div class="hamburger">
@@ -86,7 +87,8 @@
                         <h3>Вартість участі</h3>
                         <div class="price">₴500</div>
                         <p>Включено: участь у прямому ефірі, запис, презентації та бонусні матеріали.</p>
-                        <a class="btn" href="https://pay.monobank.ua/REPLACE_WITH_OWNER_TOKEN" target="_blank" rel="noopener">Оплатити через monobank</a>
+                        <!-- Використано правильний токен з гілки main -->
+                        <a class="btn" href="https://pay.monobank.ua/x8N7kP3mQ9zYt2Vb" target="_blank" rel="noopener">Оплатити через monobank</a>
                         <p class="payment-note">Після оплати ви отримаєте лист з доступом та деталями входу.</p>
                         <div class="payment-steps">
                             <h4>Як оплатити</h4>
@@ -97,10 +99,119 @@
                             </ol>
                         </div>
                     </div>
-                    <div class="webinar-help" id="registration">
-                        <h4>Реєстрація</h4>
-                        <p>Після оплати ви автоматично зареєстровані та отримаєте лист з усіма деталями входу.</p>
-                        <a class="btn btn-small" href="https://pay.monobank.ua/x8N7kP3mQ9zYt2Vb" target="_blank" rel="noopener">Перейти до оплати</a>
+                    <div class="webinar-help">
+                        <h4>Потрібна допомога?</h4>
+                        <p>Напишіть у Telegram або на email — допоможу з оплатою.</p>
+                        <a href="#registration" class="btn btn-small">Зареєструватися</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Послуги</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Креативні відеоролики</h3>
+                    <p>Створення концепції та виробництво рекламних роликів різної складності. Тижні досліджень, глибинні інтерв'ю та креативний підхід.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI-генеровані короткометражки</h3>
+                    <p>Створення вірального контенту за допомогою технологій штучного інтелекту. Висока швидкість виробництва та унікальна візуальна естетика.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Креативні концепції</h3>
+                    <p>Розробка ідей та концепцій для рекламних кампаній, фільмів, серіалів та інших креативних проєктів.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <h3>Консультації</h3>
+                    <p>Консультування щодо використання AI в креативних проєктах, допомога з інтеграцією новітніх технологій у ваш бізнес.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2>Моє портфоліо</h2>
+            <div class="tabs">
+                <button class="tab-btn active" data-filter="all">Усі проєкти</button>
+                <button class="tab-btn" data-filter="creative">Креативні ролики</button>
+                <button class="tab-btn" data-filter="ai">AI-проєкти</button>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-item creative">
+                    <div class="portfolio-img">
+                        <img src="https://via.placeholder.com/600x400" alt="Abwehr проєкт">
+                        <div class="portfolio-overlay">
+                            <h3>Серія роликів для Abwehr</h3>
+                            <p>Креативна концепція та реалізація серії рекламних роликів</p>
+                            <a href="#" class="btn-small" target="_blank">Переглянути</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item creative">
+                    <div class="portfolio-img">
+                        <img src="https://via.placeholder.com/600x400" alt="Abwehr проєкт 2">
+                        <div class="portfolio-overlay">
+                            <h3>Abwehr: креативна реклама</h3>
+                            <p>Результат тижнів досліджень та глибинних інтерв'ю</p>
+                            <a href="#" class="btn-small" target="_blank">Переглянути</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item creative">
+                    <div class="portfolio-img">
+                        <img src="https://via.placeholder.com/600x400" alt="Abwehr проєкт 3">
+                        <div class="portfolio-overlay">
+                            <h3>Abwehr: інноваційний підхід</h3>
+                            <p>Оригінальний креатив для просування бренду</p>
+                            <a href="#" class="btn-small" target="_blank">Переглянути</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item creative">
+                    <div class="portfolio-img">
+                        <img src="https://via.placeholder.com/600x400" alt="Abwehr проєкт 4">
+                        <div class="portfolio-overlay">
+                            <h3>Abwehr: комплексне рішення</h3>
+                            <p>Завершальна частина рекламної кампанії</p>
+                            <a href="#" class="btn-small" target="_blank">Переглянути</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item ai">
+                    <div class="portfolio-img">
+                        <img src="https://via.placeholder.com/600x400" alt="AI проєкт">
+                        <div class="portfolio-overlay">
+                            <h3>NeuroDream: AI-генеровані короткі ролики</h3>
+                            <p>Приклад швидкого створення вірального контенту</p>
+                            <a href="https://www.instagram.com/neurodream_ai/" class="btn-small" target="_blank">Переглянути</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item ai">
+                    <div class="portfolio-img">
+                        <img src="https://via.placeholder.com/600x400" alt="AI короткометражка">
+                        <div class="portfolio-overlay">
+                            <h3>AI-короткометражний фільм</h3>
+                            <p>Приклад використання AI для створення хорошого сюжету</p>
+                            <a href="#" class="btn-small" target="_blank">Переглянути</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -150,6 +261,130 @@
         </div>
     </section>
 
+    <section id="process" class="process">
+        <div class="container">
+            <h2>Мій робочий процес</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Обговорення</h3>
+                        <p>Детальне вивчення ваших потреб, цілей та очікувань від проєкту. Визначення цільової аудиторії та ключових повідомлень.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Дослідження</h3>
+                        <p>Тижні досліджень ринку, конкурентів та цільової аудиторії. Проведення глибинних інтерв'ю для розуміння потреб та уподобань.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Креативна концепція</h3>
+                        <p>Розробка оригінальної ідеї та стратегії її втілення. Створення сценаріїв, розкадрувань та інших підготовчих матеріалів.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Виробництво</h3>
+                        <p>Втілення концепції в життя. Залежно від типу проєкту — зйомки, використання AI для генерації контенту, монтаж та постпродакшн.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <h3>Доставка та аналіз</h3>
+                        <p>Передача готового проєкту, подальший супровід та аналіз результатів. Внесення корективів за необхідності.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2>Відгуки клієнтів</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Креативний підхід та глибоке розуміння нашого бренду призвели до створення рекламних роликів, які значно підвищили впізнаваність компанії на ринку.</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="author">
+                        <img src="https://via.placeholder.com/100x100" alt="Клієнт">
+                        <div class="author-info">
+                            <h4>Олександр Петренко</h4>
+                            <p>Маркетинг-директор, Abwehr</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Завдяки AI-технологіям та креативним ідеям, ми змогли створити серію вірусних роликів за рекордно короткий термін і з мінімальним бюджетом.</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="author">
+                        <img src="https://via.placeholder.com/100x100" alt="Клієнт">
+                        <div class="author-info">
+                            <h4>Марія Коваленко</h4>
+                            <p>Власниця, Студія дизайну "Креатив"</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Глибинні дослідження та інтерв'ю, проведені перед створенням контенту, дозволили точно потрапити в очікування нашої цільової аудиторії.</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="author">
+                        <img src="https://via.placeholder.com/100x100" alt="Клієнт">
+                        <div class="author-info">
+                            <h4>Іван Сидоренко</h4>
+                            <p>CEO, Технологічна компанія "Інновація"</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="registration" class="contact">
+        <div class="container">
+            <h2>Реєстрація</h2>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <form id="registrationForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Ваш email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="phone" name="phone" placeholder="Телефон або Telegram" required>
+                        </div>
+                        <button type="submit" class="btn">Зареєструватися</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
         <div class="container">

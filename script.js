@@ -25,6 +25,71 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Фільтрація портфоліо
+const tabBtns = document.querySelectorAll('.tab-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Видалення класу active з усіх кнопок
+        tabBtns.forEach(btn => btn.classList.remove('active'));
+        
+        // Додавання класу active до натиснутої кнопки
+        btn.classList.add('active');
+        
+        const filter = btn.getAttribute('data-filter');
+        
+        // Фільтрація елементів портфоліо
+        portfolioItems.forEach(item => {
+            if (filter === 'all' || item.classList.contains(filter)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+
+// Автопрокрутка слайдера відгуків
+const testimonialsSlider = document.querySelector('.testimonials-slider');
+const testimonials = document.querySelectorAll('.testimonial');
+let currentIndex = 0;
+
+function autoScroll() {
+    if (testimonials.length > 0) {
+        currentIndex = (currentIndex + 1) % testimonials.length;
+        testimonialsSlider.scrollTo({
+            left: testimonials[currentIndex].offsetLeft,
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Запуск автопрокрутки кожні 5 секунд
+setInterval(autoScroll, 5000);
+
+// Обробка форми реєстрації
+const registrationForm = document.getElementById('registrationForm');
+
+if (registrationForm) {
+    registrationForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Збір даних форми
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        
+        // Тут можна додати код для відправки даних на сервер
+        console.log('Дані форми:', { name, email, phone });
+        
+        // Відображення повідомлення про успішну реєстрацію
+        alert('Дякуємо за реєстрацію! Ми зв’яжемося з вами найближчим часом.');
+        
+        // Очищення форми
+        registrationForm.reset();
+    });
+}
 // Анімація при скролі
 function revealOnScroll() {
     const sections = document.querySelectorAll('section');
