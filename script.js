@@ -66,25 +66,24 @@ function autoScroll() {
 // Запуск автопрокрутки кожні 5 секунд
 setInterval(autoScroll, 5000);
 
-// Обробка форми контактів
-const contactForm = document.getElementById('contactForm');
+// Обробка форми реєстрації
+const registrationForm = document.getElementById('registrationForm');
 
-contactForm.addEventListener('submit', (e) => {
+registrationForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
     // Збір даних форми
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
+    const phone = document.getElementById('phone').value;
     
     // Тут можна додати код для відправки даних на сервер
     
-    // Відображення повідомлення про успішну відправку
-    alert('Повідомлення успішно надіслано!');
+    // Відображення повідомлення про успішну реєстрацію
+    alert('Дякуємо за реєстрацію! Ми зв’яжемося з вами найближчим часом.');
     
     // Очищення форми
-    contactForm.reset();
+    registrationForm.reset();
 });
 
 // Анімація при скролі
