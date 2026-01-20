@@ -1,7 +1,5 @@
 # Hoshovskyi.pro
 
-
-
 Персональний сайт креативного фахівця з відеовиробництва та AI-технологій.
 
 ## Про проект
@@ -25,12 +23,10 @@
 - `MONOBANK_AMOUNT` — сума в копійках (наприклад, `100` = 1 грн).
 - `KV_REST_API_URL` та `KV_REST_API_TOKEN` — автоматично додаються після створення Vercel KV.
 - `REGISTRATIONS_API_KEY` — ключ доступу до списку реєстрацій.
+- `RESEND_API_KEY` — ключ Resend для відправки листів (опційно).
+- `RESEND_FROM` — email відправника (наприклад, `noreply@hoshovskyi.pro`).
+- `RESEND_NOTIFY_TO` — email(и) для копії, через кому (опційно).
 
 ### Отримання списку реєстрацій
 
 Після створення KV у Vercel можна запитати список реєстрацій через ендпоінт:
-
-```
-GET /api/registrations
-Authorization: Bearer <REGISTRATIONS_API_KEY>
-```
