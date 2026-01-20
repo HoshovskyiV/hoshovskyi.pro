@@ -5,6 +5,7 @@ export default async function handler(req, res) {
 
   const { name, email } = req.body;
   const amount = Number.parseInt(process.env.MONOBANK_AMOUNT, 10) || 100;
+
   const registerParticipant = async () => {
     if (!process.env.KV_REST_API_URL || !process.env.KV_REST_API_TOKEN) {
       return;
@@ -18,6 +19,7 @@ export default async function handler(req, res) {
       createdAt: new Date().toISOString(),
     });
   };
+
   const sendRegistrationEmail = async () => {
     if (!process.env.RESEND_API_KEY || !process.env.RESEND_FROM) {
       return;
@@ -86,6 +88,7 @@ export default async function handler(req, res) {
 
     await registerParticipant();
     await sendRegistrationEmail();
+    
     return res.status(200).json({ pageUrl: data.pageUrl });
   } catch (error) {
     console.error(error);
