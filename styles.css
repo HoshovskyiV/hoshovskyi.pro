@@ -177,20 +177,29 @@ nav ul li a:hover:after {
 /* Секція героя */
 .hero {
     height: 100vh;
-    background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
     position: relative;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
-.hero:before {
-    content: '';
+.liquid-bg {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    background: radial-gradient(
+        circle at var(--x, 50%) var(--y, 50%),
+        #563d7c,
+        #2d4a7c,
+        #1a1a2e,
+        #050508
+    );
+    background-size: 110% 110%;
+    filter: url(#metallic-flow);
+    animation: gradientPulse 18s ease-in-out infinite;
+    transition: background 0.1s ease;
 }
 
 .hero-content {
@@ -221,6 +230,18 @@ nav ul li a:hover:after {
 .hero-meta i {
     margin-right: 8px;
     color: var(--secondary-color);
+}
+
+@keyframes gradientPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 /* Секція вебінару */

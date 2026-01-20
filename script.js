@@ -50,4 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+
+    const liquidBg = document.getElementById('liquidBg');
+    if (liquidBg) {
+        document.addEventListener('mousemove', (e) => {
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+
+            liquidBg.style.setProperty('--x', `${x}%`);
+            liquidBg.style.setProperty('--y', `${y}%`);
+        });
+    }
 });
