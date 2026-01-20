@@ -4,7 +4,20 @@ export default async function handler(req, res) {
   }
 
   const { name, email } = req.body;
-  const amount = 50000;
+  const amount = Number.parseInt(process.env.MONOBANK_AMOUNT, 10) || 100;
+  const registerParticipant = async () => {
+    if (!process.env.KV_REST_API_URL || !process.env.KV_REST_API_TOKEN) {
+      return;
+    }
+
+    const { kv } = await import('@vercel/kv');
+    await kv.lpush('registrations', {
+      name,
+      email,
+      amount,
+      createdAt: new Date().toISOString(),
+    });
+  };
 
   try {
     const response = await fetch('https://api.monobank.ua/api/merchant/invoice/create', {
@@ -42,6 +55,7 @@ export default async function handler(req, res) {
       throw new Error(data.errDescription || 'Помилка створення інвойсу');
     }
 
+    await registerParticipant();
     return res.status(200).json({ pageUrl: data.pageUrl });
   } catch (error) {
     console.error(error);
