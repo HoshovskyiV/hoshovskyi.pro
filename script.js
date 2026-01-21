@@ -4,66 +4,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const errorMsg = document.getElementById('error-message');
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const setError = (message) => {
-        if (!errorMsg) {
-            return;
-        }
-        errorMsg.textContent = message;
-        errorMsg.style.display = message ? 'block' : 'none';
-    };
+    if (form) {
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
 
-    const handlePayment = async (event) => {
-        if (event) {
-            event.preventDefault();
-        }
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
 
-        const nameInput = document.getElementById('name');
-        const emailInput = document.getElementById('email');
-        const name = nameInput?.value.trim();
-        const email = emailInput?.value.trim();
-
-        if (!name || !email) {
-            setError('Будь ласка, заповніть імʼя та електронну пошту.');
-            return;
-        }
-
-        if (btn) {
             btn.disabled = true;
             btn.textContent = 'Генеруємо посилання...';
-        }
-        setError('');
+            errorMsg.style.display = 'none';
+            errorMsg.textContent = '';
 
-        try {
-            const response = await fetch('/api/create-invoice', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ name, email }),
-            });
+            try {
+                const response = await fetch('/api/create-invoice', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ name, email }),
+                });
 
-            const data = await response.json();
+                const data = await response.json();
 
-            if (response.ok && data.pageUrl) {
-                window.location.href = data.pageUrl;
-                return;
-            }
+                if (response.ok && data.pageUrl) {
+                    window.location.href = data.pageUrl;
+                    return;
+                }
 
-            throw new Error(data.message || 'Щось пішло не так');
-        } catch (error) {
-            console.error('Error:', error);
-            setError('Помилка при створенні оплати. Спробуйте пізніше.');
-            if (btn) {
+                throw new Error(data.message || 'Щось пішло не так');
+            } catch (error) {
+                console.error('Error:', error);
+                errorMsg.textContent = 'Помилка при створенні оплати. Спробуйте пізніше.';
+                errorMsg.style.display = 'block';
                 btn.disabled = false;
                 btn.textContent = 'Оплатити через Monobank';
             }
-        }
-    };
-
-    if (form) {
-        form.addEventListener('submit', handlePayment);
-    } else if (btn) {
-        btn.addEventListener('click', handlePayment);
+        });
     }
 
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
