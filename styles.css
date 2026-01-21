@@ -34,7 +34,7 @@ body {
 }
 
 .page {
-    max-width: 1160px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 72px 24px 120px;
     position: relative;
@@ -57,8 +57,8 @@ section {
 .hero__grid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
     grid-template-areas:
-        "intro intro intro intro intro intro wide wide wide wide wide wide"
-        "photo photo photo photo accent accent accent principles principles principles principles principles"
+        "intro intro intro intro intro intro intro wide wide wide wide wide"
+        "photo photo photo accent accent accent principles principles principles principles principles principles"
         "list list list list list list list list list list list list";
     align-items: stretch;
 }
@@ -131,22 +131,22 @@ section {
 .card--hero {
     grid-area: intro;
     background: var(--surface-strong);
-    border-left: 3px solid var(--accent-cyan);
+    border-top: 3px solid var(--accent-cyan);
 }
 
 .card--wide {
     grid-area: wide;
-    border-left: 3px solid var(--accent-pink);
+    border-top: 3px solid var(--accent-pink);
 }
 
 .card--accent {
     grid-area: accent;
-    border-left: 3px solid var(--accent-orange);
+    border-top: 3px solid var(--accent-orange);
 }
 
 .card--principles {
     grid-area: principles;
-    border-left: 3px solid var(--accent-lime);
+    border-top: 3px solid var(--accent-lime);
 }
 
 .card--list {
@@ -158,12 +158,12 @@ section {
     grid-column: span 5;
     display: grid;
     gap: 18px;
-    border-left: 3px solid var(--accent-cyan);
+    border-top: 3px solid var(--accent-cyan);
 }
 
 .details__info {
     grid-column: span 7;
-    border-left: 3px solid var(--accent-orange);
+    border-top: 3px solid var(--accent-orange);
 }
 
 .card--photo {
@@ -271,8 +271,8 @@ li::before {
     .hero__grid {
         grid-template-areas:
             "intro intro intro intro intro intro intro intro intro intro intro intro"
-            "wide wide wide wide wide wide accent accent accent principles principles principles"
-            "photo photo photo photo photo photo principles principles principles principles principles principles"
+            "wide wide wide wide wide wide wide wide wide wide wide wide"
+            "photo photo photo accent accent accent principles principles principles principles principles principles"
             "list list list list list list list list list list list list";
     }
 
@@ -287,8 +287,7 @@ li::before {
         grid-template-areas:
             "intro intro intro intro intro intro intro intro intro intro intro intro"
             "wide wide wide wide wide wide wide wide wide wide wide wide"
-            "accent accent accent accent principles principles principles principles principles principles principles principles"
-            "photo photo photo photo photo photo photo photo photo photo photo photo"
+            "photo photo photo photo accent accent accent accent principles principles principles principles"
             "list list list list list list list list list list list list";
     }
 
