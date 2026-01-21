@@ -49,3 +49,15 @@ GET /api/registrations-csv?key=<REGISTRATIONS_API_KEY>
 ```
 =IMPORTDATA("https://hoshovskyi.pro/api/registrations-csv?key=<REGISTRATIONS_API_KEY>")
 ```
+
+## Додавання фото лектора
+
+1. Завантажте фото на будь-який хостинг з прямим URL (наприклад, imgbb або Cloudinary).
+2. Скопіюйте пряме посилання на зображення.
+3. Відкрийте `index.html` і замініть URL у блоці лектора:
+
+```html
+<img class="lecturer-photo" src="https://ваше-посилання-на-фото" alt="Василь Гошовський">
+```
+
+Фото відобразиться на сторінці автоматично.
