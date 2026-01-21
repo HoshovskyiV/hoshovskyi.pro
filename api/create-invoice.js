@@ -26,11 +26,12 @@ export default async function handler(req, res) {
     const payload = {
       from: process.env.RESEND_FROM,
       to: [email],
-      subject: 'Реєстрація отримана',
+      subject: 'Дякуємо за оплату',
       html: `
         <p>Привіт, ${name}!</p>
-        <p>Ми отримали вашу реєстрацію. Дякуємо!</p>
-        <p>Сума: ${amount / 100} грн.</p>
+        <p>Дякуємо за оплату участі.</p>
+        <p>У день події ми надішлемо посилання на підключення.</p>
+        <p>Бережіть себе і до зустрічі!</p>
       `,
     };
 

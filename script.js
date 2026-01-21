@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 errorMsg.textContent = 'Помилка при створенні оплати. Спробуйте пізніше.';
                 errorMsg.style.display = 'block';
                 btn.disabled = false;
-                btn.textContent = 'Оплатити через Monobank';
+                btn.textContent = 'Оплатити участь';
             }
         });
     }
