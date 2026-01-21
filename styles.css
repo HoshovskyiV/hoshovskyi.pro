@@ -403,8 +403,8 @@ footer {
 /* --- MOBILE ADAPTATION --- */
 @media (max-width: 768px) {
     .container {
-        padding-left: clamp(16px, 6vw, 24px);
-        padding-right: clamp(16px, 6vw, 24px);
+        padding-left: max(clamp(24px, 8vw, 36px), env(safe-area-inset-left));
+        padding-right: max(clamp(24px, 8vw, 36px), env(safe-area-inset-right));
     }
 
     h1 {
