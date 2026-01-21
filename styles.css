@@ -191,7 +191,7 @@ section {
     border-radius: 999px;
     background: var(--accent-lime);
     font-size: 12px;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: #050505;
     font-weight: 800;
@@ -348,6 +348,6 @@ li::before {
     }
 
     h1 {
-        font-size: clamp(2.1rem, 9vw, 3.2rem);
+        font-size: clamp(2.1rem, 9vw, 3.1rem);
     }
 }
