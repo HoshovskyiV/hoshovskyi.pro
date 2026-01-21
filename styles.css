@@ -41,7 +41,7 @@ body {
 }
 
 .section-spacing {
-    padding: 80px 0;
+    padding-block: 80px;
 }
 
 /* HEADER / HERO SECTION */
@@ -404,6 +404,11 @@ footer {
 
 /* --- MOBILE ADAPTATION --- */
 @media (max-width: 768px) {
+    .container {
+        padding-left: calc(16px + env(safe-area-inset-left));
+        padding-right: calc(16px + env(safe-area-inset-right));
+    }
+
     h1 {
         font-size: 32px;
         word-wrap: break-word;
@@ -419,7 +424,7 @@ footer {
     }
 
     .section-spacing {
-        padding: 50px 0;
+        padding-block: 50px;
     }
 
     .info-boxes {
