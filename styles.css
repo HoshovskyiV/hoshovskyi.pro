@@ -1,17 +1,17 @@
 :root {
     color-scheme: dark;
     --bg: #050505;
-    --surface: #0b0b0b;
-    --surface-strong: #111111;
-    --text: #f5f5f5;
-    --muted: #b7b7b7;
-    --stroke: #2a2a2a;
-    --accent-lime: #35ff8b;
-    --accent-pink: #ff4d8b;
-    --accent-cyan: #4df7ff;
-    --accent-orange: #ffb24d;
-    --radius-xl: 26px;
-    --radius-md: 16px;
+    --surface: #0d0d0d;
+    --surface-strong: #141414;
+    --text: #f2f2f2;
+    --muted: #b2b2b2;
+    --stroke: #2b2b2b;
+    --accent-lime: #39ff14;
+    --accent-pink: #ff2d85;
+    --accent-cyan: #22f6ff;
+    --accent-orange: #ff9f1a;
+    --radius-xl: 24px;
+    --radius-md: 14px;
 }
 
 * {
@@ -28,20 +28,20 @@ body {
     font-family: 'Manrope', sans-serif;
     background: var(--bg);
     color: var(--text);
-    line-height: 1.6;
+    line-height: 1.65;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
 .page {
-    max-width: 1200px;
+    max-width: 1180px;
     margin: 0 auto;
     padding: 72px 24px 120px;
     position: relative;
 }
 
 section {
-    margin-bottom: 88px;
+    margin-bottom: 96px;
 }
 
 .hero {
@@ -51,7 +51,7 @@ section {
 .hero__grid,
 .details__grid {
     display: grid;
-    gap: 24px;
+    gap: 28px;
 }
 
 .hero__grid {
@@ -68,7 +68,7 @@ section {
 
 .hero__shapes {
     position: absolute;
-    inset: -40px 0 auto 0;
+    inset: -50px 0 auto 0;
     pointer-events: none;
     z-index: 0;
 }
@@ -86,36 +86,36 @@ section {
     position: absolute;
     inset: 0;
     border: 2px solid currentColor;
-    transform: translate(10px, 10px);
+    transform: translate(12px, 12px);
     opacity: 0.6;
 }
 
 .shape--cube {
-    width: 180px;
-    height: 180px;
+    width: 190px;
+    height: 190px;
     color: var(--accent-cyan);
-    left: -40px;
+    left: -50px;
     top: 10px;
-    transform: rotateX(18deg) rotateY(-22deg);
+    transform: rotateX(18deg) rotateY(-25deg);
 }
 
 .shape--pill {
-    width: 240px;
+    width: 250px;
     height: 90px;
     color: var(--accent-pink);
     border-radius: 999px;
     right: 0;
-    top: 30px;
-    transform: rotateX(16deg) rotateY(20deg);
+    top: 20px;
+    transform: rotateX(14deg) rotateY(22deg);
 }
 
 .shape--tower {
-    width: 110px;
-    height: 260px;
+    width: 120px;
+    height: 270px;
     color: var(--accent-orange);
-    right: 20%;
+    right: 18%;
     top: 150px;
-    transform: rotateX(12deg) rotateY(-18deg);
+    transform: rotateX(10deg) rotateY(-18deg);
 }
 
 .card {
@@ -127,41 +127,32 @@ section {
     overflow: hidden;
 }
 
-.card::before {
-    content: '';
-    position: absolute;
-    inset: 12px;
-    border-radius: calc(var(--radius-xl) - 12px);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    pointer-events: none;
-}
-
 .card--hero {
     grid-column: span 8;
     background: var(--surface-strong);
-    border-color: rgba(77, 247, 255, 0.4);
+    border-color: rgba(34, 246, 255, 0.5);
 }
 
 .card--wide {
     grid-column: span 4;
-    border-color: rgba(255, 77, 139, 0.45);
+    border-color: rgba(255, 45, 133, 0.5);
 }
 
 .card--accent {
     grid-column: span 3;
-    border-color: rgba(255, 178, 77, 0.45);
+    border-color: rgba(255, 159, 26, 0.5);
 }
 
 .card--list {
     grid-column: span 9;
-    border-color: rgba(53, 255, 139, 0.4);
+    border-color: rgba(57, 255, 20, 0.5);
 }
 
 .card--split {
     display: grid;
-    gap: 16px;
+    gap: 18px;
     grid-column: span 6;
-    border-color: rgba(77, 247, 255, 0.4);
+    border-color: rgba(34, 246, 255, 0.5);
 }
 
 .details__grid .card:not(.card--split) {
@@ -175,7 +166,7 @@ section {
     justify-content: center;
     grid-column: span 3;
     overflow: hidden;
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(242, 242, 242, 0.25);
 }
 
 .card--photo img {
@@ -183,7 +174,7 @@ section {
     height: 100%;
     min-height: 280px;
     object-fit: cover;
-    filter: saturate(1.05) contrast(1.05);
+    filter: grayscale(0.1) contrast(1.05);
 }
 
 .sticker {
@@ -208,7 +199,7 @@ h2 {
 }
 
 h1 {
-    font-size: clamp(2.4rem, 4.5vw, 4.2rem);
+    font-size: clamp(2.6rem, 4.6vw, 4.4rem);
     line-height: 1.05;
     margin-bottom: 18px;
 }
@@ -305,6 +296,10 @@ li::before {
     .hero__shapes {
         display: none;
     }
+
+    .card {
+        padding: 26px;
+    }
 }
 
 @media (max-width: 600px) {
@@ -312,9 +307,13 @@ li::before {
         padding: 44px 18px 80px;
     }
 
+    section {
+        margin-bottom: 72px;
+    }
+
     .card {
-        padding: 24px;
-        border-radius: 22px;
+        padding: 22px;
+        border-radius: 20px;
     }
 
     .card--photo {
