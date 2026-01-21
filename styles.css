@@ -1,18 +1,18 @@
 :root {
     color-scheme: dark;
-    --bg: #080808;
-    --surface: #0f0f10;
-    --surface-strong: #121415;
-    --text: #f5f6f7;
-    --muted: #a4abb1;
-    --stroke: #1f2326;
-    --accent-cyan: #16f1f5;
-    --accent-teal: #15c8c2;
-    --accent-coral: #ff6a3d;
-    --accent-orange: #ff8a3d;
-    --radius-xl: 20px;
+    --bg: #050505;
+    --surface: #0c0c0c;
+    --surface-strong: #101213;
+    --text: #f3f4f5;
+    --muted: #a0a6ad;
+    --stroke: rgba(255, 255, 255, 0.08);
+    --accent-cyan: #20f1f1;
+    --accent-teal: #18cfd0;
+    --accent-orange: #ff6b35;
+    --accent-dim: rgba(32, 241, 241, 0.15);
+    --radius-xl: 18px;
     --radius-md: 12px;
-    --radius-sm: 10px;
+    --radius-sm: 8px;
 }
 
 * {
@@ -37,7 +37,7 @@ body {
 .page {
     max-width: 1160px;
     margin: 0 auto;
-    padding: 88px 24px 140px;
+    padding: 96px 24px 140px;
     position: relative;
 }
 
@@ -54,32 +54,18 @@ section:last-child {
 
 .hero {
     position: relative;
+    padding-top: 24px;
 }
 
-.hero__grid,
-.details__grid {
-    display: grid;
-    gap: 28px;
-}
-
-.hero__grid {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    grid-template-areas:
-        "intro intro intro intro intro intro intro intro intro intro intro intro"
-        "wide wide wide wide wide wide wide wide wide wide wide wide"
-        "accent accent accent accent accent accent principles principles principles principles principles principles"
-        "photo photo photo photo list list list list list list list list";
-    align-items: stretch;
-}
-
-.details__grid {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    align-items: stretch;
+.hero__intro {
+    max-width: 640px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero__shapes {
     position: absolute;
-    inset: -50px 0 auto 0;
+    inset: -40px 0 auto 0;
     pointer-events: none;
     z-index: 0;
     opacity: 0.75;
@@ -90,107 +76,106 @@ section:last-child {
     display: block;
     border: 1px solid currentColor;
     background: transparent;
-    transform-style: preserve-3d;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.2) inset;
 }
 
 .shape::after {
     content: '';
     position: absolute;
-    inset: 0;
+    inset: 10px;
     border: 1px solid currentColor;
-    transform: translate(10px, 10px);
-    opacity: 0.35;
+    opacity: 0.4;
 }
 
 .shape--cube {
-    width: 170px;
-    height: 170px;
-    color: var(--accent-cyan);
-    left: -50px;
+    width: 150px;
+    height: 150px;
+    color: var(--accent-teal);
+    left: -60px;
     top: 0;
-    transform: rotate(8deg);
+    transform: rotate(-8deg);
 }
 
 .shape--pill {
-    width: 130px;
-    height: 130px;
+    width: 110px;
+    height: 110px;
     color: var(--accent-teal);
     border-radius: 50%;
-    right: 40px;
-    top: 30px;
-    transform: rotate(6deg);
+    right: 60px;
+    top: 40px;
 }
 
 .shape--tower {
-    width: 90px;
-    height: 220px;
+    width: 80px;
+    height: 180px;
     color: var(--accent-orange);
-    right: 14%;
-    top: 140px;
+    right: 20%;
+    top: 180px;
     transform: rotate(-8deg);
+}
+
+.shape--ring {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    color: var(--accent-teal);
+    left: 120px;
+    top: 220px;
+    box-shadow: 0 0 0 1px rgba(32, 241, 241, 0.4);
+}
+
+.shape--dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    color: var(--accent-orange);
+    background: currentColor;
+    right: 18%;
+    top: 380px;
+    border: 0;
+    box-shadow: 0 0 0 6px rgba(255, 107, 53, 0.15);
 }
 
 .card {
     position: relative;
     padding: 28px;
     border-radius: var(--radius-xl);
-    background: transparent;
+    background: linear-gradient(180deg, rgba(10, 12, 12, 0.9), rgba(7, 7, 7, 0.92));
     border: 1px solid var(--stroke);
-    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
-}
-
-.card--hero {
-    grid-area: intro;
-    background: transparent;
-    text-align: left;
-    max-width: 780px;
-    margin: 0;
-    justify-self: start;
-    border: 0;
-    padding: 0;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.4) inset;
 }
 
 .card--wide {
-    grid-area: wide;
-    border-color: rgba(22, 241, 245, 0.3);
+    border-color: rgba(32, 241, 241, 0.2);
 }
 
 .card--accent {
-    grid-area: accent;
-    border-color: rgba(255, 138, 61, 0.5);
+    border-color: rgba(255, 107, 53, 0.45);
 }
 
 .card--principles {
-    grid-area: principles;
-    border-color: rgba(22, 241, 245, 0.4);
-    background: rgba(12, 32, 33, 0.6);
+    border-color: rgba(32, 241, 241, 0.35);
+    background: linear-gradient(180deg, rgba(5, 23, 23, 0.9), rgba(4, 11, 11, 0.95));
 }
 
 .card--list {
-    grid-area: list;
-    border-color: rgba(22, 241, 245, 0.3);
+    border-color: rgba(32, 241, 241, 0.3);
 }
 
 .card--split {
-    grid-column: span 5;
     display: grid;
     gap: 18px;
-    border-color: rgba(22, 241, 245, 0.35);
-}
-
-.details__info {
-    grid-column: span 7;
-    border-color: rgba(255, 106, 61, 0.35);
+    border-color: rgba(32, 241, 241, 0.4);
 }
 
 .card--photo {
-    grid-area: photo;
-    padding: 10px;
+    padding: 12px;
     display: flex;
     align-items: stretch;
     justify-content: center;
     overflow: hidden;
-    border: 1px solid rgba(22, 241, 245, 0.35);
+    border: 1px solid rgba(32, 241, 241, 0.5);
+    background: #050505;
 }
 
 .card--photo img {
@@ -198,7 +183,7 @@ section:last-child {
     height: 100%;
     min-height: 280px;
     object-fit: cover;
-    filter: grayscale(0.2) contrast(1.05);
+    filter: grayscale(0.3) contrast(1.05);
 }
 
 .sticker {
@@ -233,7 +218,7 @@ h2 {
 }
 
 h1 {
-    font-size: clamp(2.6rem, 4.4vw, 4.1rem);
+    font-size: clamp(2.8rem, 5vw, 4.4rem);
     line-height: 1.08;
     margin-bottom: 18px;
 }
@@ -256,6 +241,12 @@ p {
     color: var(--text);
 }
 
+.lead {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 520px;
+}
+
 .card p + p {
     margin-top: 16px;
 }
@@ -271,11 +262,11 @@ li {
     position: relative;
     padding: 18px 18px 18px 52px;
     border-radius: var(--radius-md);
-    background: transparent;
+    background: rgba(7, 7, 7, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.08);
     color: var(--muted);
     font-size: 15px;
-    transition: border-color 0.2s ease, color 0.2s ease;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
 }
 
 li::before {
@@ -287,7 +278,7 @@ li::before {
     height: 16px;
     border-radius: 4px;
     border: 1px solid var(--accent-cyan);
-    background: transparent;
+    background: var(--accent-dim);
     transform: translateY(-50%);
 }
 
@@ -308,11 +299,11 @@ li::before {
     align-items: center;
     padding: 10px 14px;
     border-radius: 999px;
-    border: 1px solid rgba(34, 217, 217, 0.5);
+    border: 1px solid rgba(32, 241, 241, 0.4);
     color: var(--muted);
     font-size: 14px;
     line-height: 1.4;
-    background: rgba(15, 20, 26, 0.7);
+    background: rgba(12, 14, 14, 0.8);
 }
 
 .cta {
@@ -330,71 +321,106 @@ li::before {
     font-family: inherit;
     line-height: 1.1;
     appearance: none;
-    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-}
-
-.card:hover {
-    border-color: rgba(22, 241, 245, 0.45);
-    background: rgba(15, 18, 20, 0.6);
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 li:hover {
-    border-color: rgba(22, 241, 245, 0.5);
+    border-color: rgba(32, 241, 241, 0.5);
     color: var(--text);
+    background: rgba(11, 18, 18, 0.85);
 }
 
 .cta:hover {
     background: transparent;
     color: var(--accent-cyan);
+    transform: translateY(-1px);
 }
 
-@media (max-width: 1100px) {
-    .hero__grid {
-        grid-template-areas:
-            "intro intro intro intro intro intro intro intro intro intro intro intro"
-            "wide wide wide wide wide wide wide wide wide wide wide wide"
-            "accent accent accent accent accent accent principles principles principles principles principles principles"
-            "photo photo photo photo list list list list list list list list";
-    }
-
-    .card--split,
-    .details__info {
-        grid-column: 1 / -1;
-    }
+.about__grid,
+.lecturer__grid,
+.details__grid {
+    display: grid;
+    gap: 24px;
 }
 
-@media (max-width: 900px) {
-    .hero__grid {
-        grid-template-areas:
-            "intro intro intro intro intro intro intro intro intro intro intro intro"
-            "wide wide wide wide wide wide wide wide wide wide wide wide"
-            "photo photo photo photo accent accent accent accent principles principles principles principles"
-            "list list list list list list list list list list list list";
+.about__grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.about__grid .card--wide {
+    grid-column: span 12;
+}
+
+.about__grid .card--accent {
+    grid-column: span 6;
+}
+
+.about__grid .card--principles {
+    grid-column: span 6;
+}
+
+.advantages .card--list h2::before,
+.lecturer__info h2::before {
+    content: '';
+    display: inline-block;
+    width: 36px;
+    height: 2px;
+    background: var(--accent-cyan);
+    margin-right: 12px;
+    vertical-align: middle;
+}
+
+.advantages .card--list h2 {
+    margin-bottom: 24px;
+}
+
+.lecturer__grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: center;
+}
+
+.lecturer__grid .card--photo {
+    grid-column: span 5;
+}
+
+.lecturer__info {
+    grid-column: span 7;
+    border-color: rgba(255, 107, 53, 0.35);
+}
+
+.details__grid {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    justify-content: center;
+}
+
+.details__grid .card--split {
+    grid-column: 4 / span 6;
+    text-align: center;
+}
+
+.details__grid .details__meta {
+    justify-content: center;
+}
+
+@media (max-width: 960px) {
+    .about__grid .card--accent,
+    .about__grid .card--principles {
+        grid-column: span 12;
     }
 
-    ul {
-        grid-template-columns: 1fr;
+    .lecturer__grid .card--photo,
+    .lecturer__info {
+        grid-column: span 12;
+    }
+
+    .details__grid .card--split {
+        grid-column: 2 / span 10;
     }
 }
 
 @media (max-width: 820px) {
     .page {
         padding: 60px 20px 96px;
-    }
-
-    .hero__grid,
-    .details__grid {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-    }
-
-    .hero__grid {
-        grid-template-areas:
-            "intro intro intro intro intro intro"
-            "wide wide wide wide wide wide"
-            "accent accent accent accent accent accent"
-            "principles principles principles principles principles principles"
-            "photo photo photo photo photo photo"
-            "list list list list list list";
     }
 
     .hero__shapes {
@@ -425,16 +451,24 @@ li:hover {
         padding: 8px;
     }
 
+    ul {
+        grid-template-columns: 1fr;
+    }
+
     li {
         padding: 14px 16px 14px 44px;
     }
 
     h1 {
-        font-size: clamp(2.1rem, 9vw, 3.1rem);
+        font-size: clamp(2.3rem, 9vw, 3.2rem);
     }
 
     .details__meta {
         flex-direction: column;
+    }
+
+    .details__grid .card--split {
+        grid-column: 1 / -1;
     }
 
     .cta {
