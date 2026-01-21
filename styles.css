@@ -2,15 +2,15 @@
     color-scheme: dark;
     --bg: #050505;
     --surface: #0d0d0d;
-    --surface-strong: #141414;
-    --text: #f2f2f2;
-    --muted: #b2b2b2;
-    --stroke: #2b2b2b;
+    --surface-strong: #121212;
+    --text: #f1f1f1;
+    --muted: #b3b3b3;
+    --stroke: #2a2a2a;
     --accent-lime: #39ff14;
     --accent-pink: #ff2d85;
     --accent-cyan: #22f6ff;
     --accent-orange: #ff9f1a;
-    --radius-xl: 24px;
+    --radius-xl: 22px;
     --radius-md: 14px;
 }
 
@@ -34,7 +34,7 @@ body {
 }
 
 .page {
-    max-width: 1180px;
+    max-width: 1160px;
     margin: 0 auto;
     padding: 72px 24px 120px;
     position: relative;
@@ -56,14 +56,16 @@ section {
 
 .hero__grid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-template-areas:
+        "intro intro intro intro intro intro wide wide wide wide wide wide"
+        "photo photo photo photo accent accent accent principles principles principles principles principles"
+        "list list list list list list list list list list list list";
+    align-items: stretch;
 }
 
 .details__grid {
     grid-template-columns: repeat(12, minmax(0, 1fr));
-}
-
-.hero__grid > .card {
-    grid-column: span 4;
+    align-items: stretch;
 }
 
 .hero__shapes {
@@ -87,7 +89,7 @@ section {
     inset: 0;
     border: 2px solid currentColor;
     transform: translate(12px, 12px);
-    opacity: 0.6;
+    opacity: 0.55;
 }
 
 .shape--cube {
@@ -124,49 +126,54 @@ section {
     border-radius: var(--radius-xl);
     background: var(--surface);
     border: 1px solid var(--stroke);
-    overflow: hidden;
 }
 
 .card--hero {
-    grid-column: span 8;
+    grid-area: intro;
     background: var(--surface-strong);
-    border-color: rgba(34, 246, 255, 0.5);
+    border-left: 3px solid var(--accent-cyan);
 }
 
 .card--wide {
-    grid-column: span 4;
-    border-color: rgba(255, 45, 133, 0.5);
+    grid-area: wide;
+    border-left: 3px solid var(--accent-pink);
 }
 
 .card--accent {
-    grid-column: span 3;
-    border-color: rgba(255, 159, 26, 0.5);
+    grid-area: accent;
+    border-left: 3px solid var(--accent-orange);
+}
+
+.card--principles {
+    grid-area: principles;
+    border-left: 3px solid var(--accent-lime);
 }
 
 .card--list {
-    grid-column: span 9;
-    border-color: rgba(57, 255, 20, 0.5);
+    grid-area: list;
+    border-top: 3px solid var(--accent-lime);
 }
 
 .card--split {
+    grid-column: span 5;
     display: grid;
     gap: 18px;
-    grid-column: span 6;
-    border-color: rgba(34, 246, 255, 0.5);
+    border-left: 3px solid var(--accent-cyan);
 }
 
-.details__grid .card:not(.card--split) {
-    grid-column: span 6;
+.details__info {
+    grid-column: span 7;
+    border-left: 3px solid var(--accent-orange);
 }
 
 .card--photo {
+    grid-area: photo;
     padding: 0;
     display: flex;
     align-items: stretch;
     justify-content: center;
-    grid-column: span 3;
     overflow: hidden;
-    border-color: rgba(242, 242, 242, 0.25);
+    border: 1px solid rgba(242, 242, 242, 0.25);
 }
 
 .card--photo img {
@@ -229,6 +236,7 @@ ul {
     list-style: none;
     display: grid;
     gap: 14px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 li {
@@ -260,21 +268,32 @@ li::before {
 }
 
 @media (max-width: 1100px) {
-    .card--hero {
+    .hero__grid {
+        grid-template-areas:
+            "intro intro intro intro intro intro intro intro intro intro intro intro"
+            "wide wide wide wide wide wide accent accent accent principles principles principles"
+            "photo photo photo photo photo photo principles principles principles principles principles principles"
+            "list list list list list list list list list list list list";
+    }
+
+    .card--split,
+    .details__info {
         grid-column: 1 / -1;
     }
+}
 
-    .card--wide {
-        grid-column: span 6;
+@media (max-width: 900px) {
+    .hero__grid {
+        grid-template-areas:
+            "intro intro intro intro intro intro intro intro intro intro intro intro"
+            "wide wide wide wide wide wide wide wide wide wide wide wide"
+            "accent accent accent accent principles principles principles principles principles principles principles principles"
+            "photo photo photo photo photo photo photo photo photo photo photo photo"
+            "list list list list list list list list list list list list";
     }
 
-    .card--accent,
-    .card--photo {
-        grid-column: span 6;
-    }
-
-    .card--list {
-        grid-column: 1 / -1;
+    ul {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -288,9 +307,14 @@ li::before {
         grid-template-columns: repeat(6, minmax(0, 1fr));
     }
 
-    .hero__grid > .card,
-    .details__grid > .card {
-        grid-column: 1 / -1;
+    .hero__grid {
+        grid-template-areas:
+            "intro intro intro intro intro intro"
+            "wide wide wide wide wide wide"
+            "accent accent accent accent accent accent"
+            "principles principles principles principles principles principles"
+            "photo photo photo photo photo photo"
+            "list list list list list list";
     }
 
     .hero__shapes {
