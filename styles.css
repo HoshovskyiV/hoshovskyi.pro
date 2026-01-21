@@ -402,6 +402,11 @@ footer {
 
 /* --- MOBILE ADAPTATION --- */
 @media (max-width: 768px) {
+    .container {
+        padding-left: clamp(16px, 6vw, 24px);
+        padding-right: clamp(16px, 6vw, 24px);
+    }
+
     h1 {
         font-size: 32px;
         word-wrap: break-word;
