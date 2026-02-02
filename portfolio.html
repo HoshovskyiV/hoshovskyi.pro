@@ -35,7 +35,16 @@
         <h2>Карусель кейсів</h2>
         <p class="carousel-hint">Гортайте вправо, щоб переглянути всі проєкти.</p>
 
-        <div class="carousel" aria-label="Карусель відеопроєктів">
+        <div class="carousel-controls" aria-label="Керування каруселлю">
+          <button class="carousel-button" type="button" data-carousel-prev>
+            ← Попередній
+          </button>
+          <button class="carousel-button" type="button" data-carousel-next>
+            Наступний →
+          </button>
+        </div>
+
+        <div class="carousel" aria-label="Карусель відеопроєктів" data-carousel>
           <article class="carousel__item">
             <div class="carousel__video">
               <iframe

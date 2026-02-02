@@ -148,4 +148,55 @@ const progress = maxScroll > 0 ? currentScroll / maxScroll : 0;
         document.addEventListener('mousemove', handleMouseMove);
         animateTrail();
     }
+
+    const carousel = document.querySelector('[data-carousel]');
+    if (carousel) {
+        const items = Array.from(carousel.querySelectorAll('.carousel__item'));
+        const prevButton = document.querySelector('[data-carousel-prev]');
+        const nextButton = document.querySelector('[data-carousel-next]');
+        let currentIndex = 0;
+
+        const scrollToIndex = (index) => {
+            const target = items[index];
+            if (!target) {
+                return;
+            }
+            target.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        };
+
+        const updateIndexFromScroll = () => {
+            const carouselRect = carousel.getBoundingClientRect();
+            const center = carouselRect.left + carouselRect.width / 2;
+            let closestIndex = 0;
+            let closestDistance = Infinity;
+
+            items.forEach((item, index) => {
+                const itemRect = item.getBoundingClientRect();
+                const itemCenter = itemRect.left + itemRect.width / 2;
+                const distance = Math.abs(center - itemCenter);
+                if (distance < closestDistance) {
+                    closestDistance = distance;
+                    closestIndex = index;
+                }
+            });
+
+            currentIndex = closestIndex;
+        };
+
+        prevButton?.addEventListener('click', () => {
+            currentIndex = Math.max(0, currentIndex - 1);
+            scrollToIndex(currentIndex);
+        });
+
+        nextButton?.addEventListener('click', () => {
+            currentIndex = Math.min(items.length - 1, currentIndex + 1);
+            scrollToIndex(currentIndex);
+        });
+
+        carousel.addEventListener('scroll', () => {
+            window.requestAnimationFrame(updateIndexFromScroll);
+        });
+
+        updateIndexFromScroll();
+    }
 });
