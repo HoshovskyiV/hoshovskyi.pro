@@ -148,4 +148,32 @@ const progress = maxScroll > 0 ? currentScroll / maxScroll : 0;
         document.addEventListener('mousemove', handleMouseMove);
         animateTrail();
     }
+
+    const carousel = document.querySelector('[data-carousel]');
+    if (carousel) {
+        const track = carousel.querySelector('.carousel-track');
+        const items = Array.from(carousel.querySelectorAll('.carousel__item'));
+        const prevButton = carousel.querySelector('[data-carousel-prev]');
+        const nextButton = carousel.querySelector('[data-carousel-next]');
+        let currentIndex = 0;
+
+        const updatePosition = () => {
+            if (!track) {
+                return;
+            }
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        };
+
+        prevButton?.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            updatePosition();
+        });
+
+        nextButton?.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % items.length;
+            updatePosition();
+        });
+
+        updatePosition();
+    }
 });
