@@ -151,37 +151,29 @@ const progress = maxScroll > 0 ? currentScroll / maxScroll : 0;
 
     const carousel = document.querySelector('[data-carousel]');
     if (carousel) {
+        const track = carousel.querySelector('.carousel-track');
         const items = Array.from(carousel.querySelectorAll('.carousel__item'));
-        const prevButton = document.querySelector('[data-carousel-prev]');
-        const nextButton = document.querySelector('[data-carousel-next]');
-        let currentIndex = items.findIndex((item) => item.classList.contains('is-active'));
-        if (currentIndex === -1) {
-            currentIndex = 0;
-        }
+        const prevButton = carousel.querySelector('[data-carousel-prev]');
+        const nextButton = carousel.querySelector('[data-carousel-next]');
+        let currentIndex = 0;
 
-        const setActive = (index, direction) => {
-            const currentItem = items[currentIndex];
-            const nextItem = items[index];
-            if (!nextItem || currentItem === nextItem) {
+        const updatePosition = () => {
+            if (!track) {
                 return;
             }
-
-            currentItem.classList.remove('is-active', 'is-exit-left', 'is-exit-right');
-            currentItem.classList.add(direction === 'left' ? 'is-exit-right' : 'is-exit-left');
-
-            nextItem.classList.remove('is-exit-left', 'is-exit-right');
-            nextItem.classList.add('is-active');
-            currentIndex = index;
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
         };
 
         prevButton?.addEventListener('click', () => {
-            const nextIndex = (currentIndex - 1 + items.length) % items.length;
-            setActive(nextIndex, 'left');
+            currentIndex = (currentIndex - 1 + items.length) % items.length;
+            updatePosition();
         });
 
         nextButton?.addEventListener('click', () => {
-            const nextIndex = (currentIndex + 1) % items.length;
-            setActive(nextIndex, 'right');
+            currentIndex = (currentIndex + 1) % items.length;
+            updatePosition();
         });
+
+        updatePosition();
     }
 });
