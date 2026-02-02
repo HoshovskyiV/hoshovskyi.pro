@@ -408,41 +408,45 @@ footer {
     color: #c7c7c7;
 }
 
-.carousel {
+.carousel-frame {
     margin-top: 32px;
+    position: relative;
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: minmax(280px, 70%);
-    gap: 24px;
-    overflow-x: auto;
-    padding: 12px 0 24px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 18px;
 }
 
-.carousel-controls {
-    margin-top: 20px;
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
+.carousel {
+    position: relative;
+    min-height: 420px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
 }
 
 .carousel-button {
     background: transparent;
     border: 1px solid var(--accent-cyan);
     color: var(--accent-cyan);
-    padding: 10px 16px;
-    border-radius: 999px;
-    font-weight: 600;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-weight: 700;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    display: grid;
+    place-items: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .carousel-button:hover {
-    transform: translateY(-2px);
+    transform: scale(1.05);
+    background-color: rgba(0, 255, 255, 0.08);
 }
 
 .carousel__item {
+    position: absolute;
+    width: min(720px, 88vw);
     background: var(--gray-bg);
     border: 1px solid var(--border-color);
     border-radius: 18px;
@@ -450,8 +454,26 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    scroll-snap-align: center;
-    min-width: min(680px, 90vw);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(60px);
+    transition: transform 0.45s ease, opacity 0.45s ease;
+}
+
+.carousel__item.is-active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.carousel__item.is-exit-left {
+    transform: translateX(-60px);
+    opacity: 0;
+}
+
+.carousel__item.is-exit-right {
+    transform: translateX(60px);
+    opacity: 0;
 }
 
 .carousel__video {
@@ -481,18 +503,19 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .carousel-frame {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 16px;
+    }
+
     .carousel {
-        grid-auto-columns: minmax(240px, 85%);
-        padding-bottom: 16px;
+        min-height: 360px;
     }
 
-    .carousel__item {
-        min-width: 85vw;
-    }
-
-    .carousel-controls {
-        justify-content: center;
-        flex-wrap: wrap;
+    .carousel-button {
+        width: 40px;
+        height: 40px;
     }
 }
 

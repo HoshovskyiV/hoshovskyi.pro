@@ -154,49 +154,34 @@ const progress = maxScroll > 0 ? currentScroll / maxScroll : 0;
         const items = Array.from(carousel.querySelectorAll('.carousel__item'));
         const prevButton = document.querySelector('[data-carousel-prev]');
         const nextButton = document.querySelector('[data-carousel-next]');
-        let currentIndex = 0;
+        let currentIndex = items.findIndex((item) => item.classList.contains('is-active'));
+        if (currentIndex === -1) {
+            currentIndex = 0;
+        }
 
-        const scrollToIndex = (index) => {
-            const target = items[index];
-            if (!target) {
+        const setActive = (index, direction) => {
+            const currentItem = items[currentIndex];
+            const nextItem = items[index];
+            if (!nextItem || currentItem === nextItem) {
                 return;
             }
-            target.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
-        };
 
-        const updateIndexFromScroll = () => {
-            const carouselRect = carousel.getBoundingClientRect();
-            const center = carouselRect.left + carouselRect.width / 2;
-            let closestIndex = 0;
-            let closestDistance = Infinity;
+            currentItem.classList.remove('is-active', 'is-exit-left', 'is-exit-right');
+            currentItem.classList.add(direction === 'left' ? 'is-exit-right' : 'is-exit-left');
 
-            items.forEach((item, index) => {
-                const itemRect = item.getBoundingClientRect();
-                const itemCenter = itemRect.left + itemRect.width / 2;
-                const distance = Math.abs(center - itemCenter);
-                if (distance < closestDistance) {
-                    closestDistance = distance;
-                    closestIndex = index;
-                }
-            });
-
-            currentIndex = closestIndex;
+            nextItem.classList.remove('is-exit-left', 'is-exit-right');
+            nextItem.classList.add('is-active');
+            currentIndex = index;
         };
 
         prevButton?.addEventListener('click', () => {
-            currentIndex = Math.max(0, currentIndex - 1);
-            scrollToIndex(currentIndex);
+            const nextIndex = (currentIndex - 1 + items.length) % items.length;
+            setActive(nextIndex, 'left');
         });
 
         nextButton?.addEventListener('click', () => {
-            currentIndex = Math.min(items.length - 1, currentIndex + 1);
-            scrollToIndex(currentIndex);
+            const nextIndex = (currentIndex + 1) % items.length;
+            setActive(nextIndex, 'right');
         });
-
-        carousel.addEventListener('scroll', () => {
-            window.requestAnimationFrame(updateIndexFromScroll);
-        });
-
-        updateIndexFromScroll();
     }
 });

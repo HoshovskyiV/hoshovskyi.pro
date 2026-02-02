@@ -35,83 +35,87 @@
         <h2>Карусель кейсів</h2>
         <p class="carousel-hint">Гортайте вправо, щоб переглянути всі проєкти.</p>
 
-        <div class="carousel-controls" aria-label="Керування каруселлю">
-          <button class="carousel-button" type="button" data-carousel-prev>
-            ← Попередній
+        <div class="carousel-frame" aria-label="Карусель відеопроєктів">
+          <button class="carousel-button carousel-button--left" type="button" data-carousel-prev>
+            ←
           </button>
-          <button class="carousel-button" type="button" data-carousel-next>
-            Наступний →
+
+          <div class="carousel" data-carousel>
+            <article class="carousel__item is-active">
+              <div class="carousel__video">
+                <iframe
+                  src="https://www.youtube.com/embed/ysz5S6PUM-U"
+                  title="Комерційний ролик для бренду"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="carousel__content">
+                <h3>Комерційний ролик для бренду</h3>
+                <p>
+                  60 секунд динамічної історії. Режисура, зйомка та повний продакшн
+                  під ключ.
+                </p>
+              </div>
+            </article>
+
+            <article class="carousel__item">
+              <div class="carousel__video">
+                <iframe
+                  src="https://www.youtube.com/embed/ScMzIvxBSi4"
+                  title="AI-експериментальний кліп"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="carousel__content">
+                <h3>AI-експериментальний кліп</h3>
+                <p>
+                  Експеримент з AI-генерацією кадрів, динамічний монтаж та музичний
+                  настрій.
+                </p>
+              </div>
+            </article>
+
+            <article class="carousel__item">
+              <div class="carousel__video">
+                <iframe
+                  src="https://www.youtube.com/embed/jNQXAC9IVRw"
+                  title="Корпоративне відео"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="carousel__content">
+                <h3>Корпоративне відео</h3>
+                <p>
+                  Дворівневий сценарій та режисура для історії про команду, продукт і
+                  цінності.
+                </p>
+              </div>
+            </article>
+
+            <article class="carousel__item">
+              <div class="carousel__video">
+                <iframe
+                  src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                  title="AI-концепт рекламної кампанії"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div class="carousel__content">
+                <h3>AI-концепт рекламної кампанії</h3>
+                <p>
+                  Серія тизерів з AI-графікою, швидкі переходи та акцент на продукті.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <button class="carousel-button carousel-button--right" type="button" data-carousel-next>
+            →
           </button>
-        </div>
-
-        <div class="carousel" aria-label="Карусель відеопроєктів" data-carousel>
-          <article class="carousel__item">
-            <div class="carousel__video">
-              <iframe
-                src="https://www.youtube.com/embed/ysz5S6PUM-U"
-                title="Комерційний ролик для бренду"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <div class="carousel__content">
-              <h3>Комерційний ролик для бренду</h3>
-              <p>
-                60 секунд динамічної історії. Режисура, зйомка та повний продакшн під ключ.
-              </p>
-            </div>
-          </article>
-
-          <article class="carousel__item">
-            <div class="carousel__video">
-              <iframe
-                src="https://www.youtube.com/embed/ScMzIvxBSi4"
-                title="AI-експериментальний кліп"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <div class="carousel__content">
-              <h3>AI-експериментальний кліп</h3>
-              <p>
-                Експеримент з AI-генерацією кадрів, динамічний монтаж та музичний настрій.
-              </p>
-            </div>
-          </article>
-
-          <article class="carousel__item">
-            <div class="carousel__video">
-              <iframe
-                src="https://www.youtube.com/embed/jNQXAC9IVRw"
-                title="Корпоративне відео"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <div class="carousel__content">
-              <h3>Корпоративне відео</h3>
-              <p>
-                Дворівневий сценарій та режисура для історії про команду, продукт і цінності.
-              </p>
-            </div>
-          </article>
-
-          <article class="carousel__item">
-            <div class="carousel__video">
-              <iframe
-                src="https://www.youtube.com/embed/tgbNymZ7vqY"
-                title="AI-концепт рекламної кампанії"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <div class="carousel__content">
-              <h3>AI-концепт рекламної кампанії</h3>
-              <p>
-                Серія тизерів з AI-графікою, швидкі переходи та акцент на продукті.
-              </p>
-            </div>
-          </article>
         </div>
       </section>
     </main>
