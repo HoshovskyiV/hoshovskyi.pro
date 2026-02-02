@@ -148,4 +148,40 @@ const progress = maxScroll > 0 ? currentScroll / maxScroll : 0;
         document.addEventListener('mousemove', handleMouseMove);
         animateTrail();
     }
+
+    const carousel = document.querySelector('[data-carousel]');
+    if (carousel) {
+        const items = Array.from(carousel.querySelectorAll('.carousel__item'));
+        const prevButton = document.querySelector('[data-carousel-prev]');
+        const nextButton = document.querySelector('[data-carousel-next]');
+        let currentIndex = items.findIndex((item) => item.classList.contains('is-active'));
+        if (currentIndex === -1) {
+            currentIndex = 0;
+        }
+
+        const setActive = (index, direction) => {
+            const currentItem = items[currentIndex];
+            const nextItem = items[index];
+            if (!nextItem || currentItem === nextItem) {
+                return;
+            }
+
+            currentItem.classList.remove('is-active', 'is-exit-left', 'is-exit-right');
+            currentItem.classList.add(direction === 'left' ? 'is-exit-right' : 'is-exit-left');
+
+            nextItem.classList.remove('is-exit-left', 'is-exit-right');
+            nextItem.classList.add('is-active');
+            currentIndex = index;
+        };
+
+        prevButton?.addEventListener('click', () => {
+            const nextIndex = (currentIndex - 1 + items.length) % items.length;
+            setActive(nextIndex, 'left');
+        });
+
+        nextButton?.addEventListener('click', () => {
+            const nextIndex = (currentIndex + 1) % items.length;
+            setActive(nextIndex, 'right');
+        });
+    }
 });
