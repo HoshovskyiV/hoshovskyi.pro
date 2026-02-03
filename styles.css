@@ -5,11 +5,12 @@
     --accent-orange: #f2c94c;
     --accent-lilac: #9aa6ff;
     --accent-rose: #e56b6f;
-    --surface: #151923;
-    --surface-soft: rgba(21, 25, 35, 0.78);
-    --surface-strong: #10131a;
+    --surface: #141820;
+    --surface-soft: rgba(20, 24, 32, 0.86);
+    --surface-strong: #0f1218;
     --border-color: rgba(244, 241, 234, 0.12);
     --shadow-soft: 0 30px 80px rgba(8, 10, 14, 0.55);
+    --divider: rgba(244, 241, 234, 0.14);
 }
 
 * {
@@ -102,11 +103,30 @@ a {
 
 .section-spacing {
     padding-block: 100px;
+    position: relative;
+}
+
+.section-spacing::before,
+.section-spacing::after {
+    content: '';
+    position: absolute;
+    left: clamp(20px, 5vw, 32px);
+    right: clamp(20px, 5vw, 32px);
+    height: 1px;
+    background: var(--divider);
+}
+
+.section-spacing::before {
+    top: 0;
+}
+
+.section-spacing::after {
+    bottom: 0;
 }
 
 .section-title {
     font-size: 11px;
-    letter-spacing: 0.45em;
+    letter-spacing: 0.55em;
     color: var(--accent-cyan);
     text-transform: uppercase;
     margin-bottom: 18px;
@@ -133,14 +153,14 @@ h4 {
 }
 
 h1 {
-    font-size: clamp(40px, 5.4vw, 66px);
-    line-height: 1.02;
+    font-size: clamp(40px, 5.6vw, 70px);
+    line-height: 1;
     margin-bottom: 24px;
     letter-spacing: 0.01em;
 }
 
 h2 {
-    font-size: clamp(30px, 3.8vw, 44px);
+    font-size: clamp(30px, 3.9vw, 46px);
     margin-bottom: 40px;
     letter-spacing: 0.01em;
 }
@@ -187,13 +207,25 @@ h2 {
     grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
     gap: clamp(32px, 5vw, 72px);
     align-items: start;
+    position: relative;
+}
+
+.hero-layout::after {
+    content: '';
+    position: absolute;
+    top: -32px;
+    bottom: -32px;
+    left: calc(65% + 12px);
+    width: 1px;
+    background: var(--divider);
+    opacity: 0.7;
 }
 
 .hero-content {
     padding: clamp(22px, 3.5vw, 36px);
-    border-radius: 22px;
+    border-radius: 12px;
     background: var(--surface-soft);
-    border: 1px solid rgba(244, 241, 234, 0.1);
+    border: 1px solid rgba(244, 241, 234, 0.12);
     box-shadow: 0 24px 60px rgba(6, 9, 14, 0.55);
     backdrop-filter: blur(8px);
 }
@@ -217,9 +249,9 @@ h2 {
     align-items: center;
     gap: 15px;
     padding: 16px 18px;
-    border-radius: 18px;
+    border-radius: 10px;
     background: rgba(12, 15, 21, 0.78);
-    border: 1px solid rgba(244, 241, 234, 0.08);
+    border: 1px solid rgba(244, 241, 234, 0.12);
 }
 
 .box-border {
@@ -232,7 +264,7 @@ h2 {
     font-size: 22px;
     border: 1px solid;
     flex-shrink: 0;
-    border-radius: 14px;
+    border-radius: 8px;
     background: rgba(8, 10, 14, 0.7);
     font-family: 'IBM Plex Sans', sans-serif;
 }
@@ -273,7 +305,7 @@ h2 {
 .btn-secondary {
     border: none;
     padding: 16px 32px;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 700;
     cursor: pointer;
     display: inline-flex;
@@ -282,9 +314,9 @@ h2 {
     gap: 10px;
     text-decoration: none;
     transition: transform 0.2s, box-shadow 0.2s;
-    border-radius: 10px;
+    border-radius: 6px;
     font-family: 'IBM Plex Sans', sans-serif;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
 }
 
@@ -312,7 +344,7 @@ h2 {
 .hero-card {
     position: relative;
     padding: 32px 28px;
-    border-radius: 22px;
+    border-radius: 12px;
     background: linear-gradient(180deg, rgba(18, 22, 31, 0.96), rgba(12, 15, 21, 0.84));
     border: 1px solid rgba(244, 241, 234, 0.14);
     box-shadow: var(--shadow-soft);
@@ -363,8 +395,8 @@ h2 {
     position: absolute;
     left: 0;
     color: var(--accent-cyan);
-    font-size: 10px;
-    top: 7px;
+    font-size: 9px;
+    top: 8px;
 }
 
 .hero-card__price {
@@ -372,7 +404,7 @@ h2 {
     justify-content: space-between;
     align-items: center;
     padding: 16px 18px;
-    border-radius: 16px;
+    border-radius: 10px;
     background: rgba(12, 15, 21, 0.8);
     border: 1px solid rgba(244, 241, 234, 0.12);
     font-family: 'IBM Plex Sans', sans-serif;
@@ -427,9 +459,21 @@ h2 {
 /* TEXT CONTENT SECTION */
 .intro-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
     gap: 36px;
     align-items: start;
+    position: relative;
+}
+
+.intro-grid::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 60%;
+    width: 1px;
+    background: var(--divider);
+    opacity: 0.6;
 }
 
 .intro-text p {
@@ -442,7 +486,7 @@ h2 {
     background: linear-gradient(160deg, rgba(20, 24, 32, 0.98), rgba(13, 15, 20, 0.82));
     border: 1px solid rgba(44, 107, 255, 0.35);
     padding: 32px;
-    border-radius: 22px;
+    border-radius: 12px;
     font-size: 18px;
     line-height: 1.7;
     color: rgba(244, 241, 234, 0.85);
@@ -457,13 +501,13 @@ h2 {
 }
 
 .benefit-item {
-    border: 1px solid rgba(244, 241, 234, 0.1);
+    border: 1px solid rgba(244, 241, 234, 0.12);
     padding: 24px;
     display: flex;
     align-items: flex-start;
     gap: 20px;
     background: rgba(12, 15, 21, 0.78);
-    border-radius: 18px;
+    border-radius: 10px;
     box-shadow: 0 18px 40px rgba(4, 8, 18, 0.3);
 }
 
@@ -476,7 +520,7 @@ h2 {
     align-items: center;
     flex-shrink: 0;
     font-size: 24px;
-    border-radius: 14px;
+    border-radius: 8px;
     background: rgba(8, 12, 18, 0.85);
     box-shadow: inset 0 0 12px rgba(44, 107, 255, 0.15);
 }
@@ -499,7 +543,7 @@ h2 {
     flex-shrink: 0;
     background: #000;
     overflow: hidden;
-    border-radius: 22px;
+    border-radius: 10px;
     box-shadow: 0 26px 50px rgba(4, 10, 20, 0.45);
 }
 
@@ -539,7 +583,7 @@ h2 {
     padding: 30px;
     margin-bottom: 30px;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 10px;
     background: rgba(12, 15, 21, 0.78);
     box-shadow: 0 18px 35px rgba(4, 8, 18, 0.25);
 }
@@ -561,7 +605,7 @@ h2 {
 
 .registration-form {
     background: rgba(12, 15, 21, 0.78);
-    border-radius: 22px;
+    border-radius: 10px;
     padding: 32px;
     border: 1px solid rgba(244, 241, 234, 0.12);
     box-shadow: 0 24px 45px rgba(4, 8, 18, 0.3);
@@ -590,7 +634,7 @@ input[type='email'] {
     color: #fff;
     font-size: 16px;
     outline: none;
-    border-radius: 14px;
+    border-radius: 8px;
     appearance: none;
     font-family: 'IBM Plex Sans', sans-serif;
 }
@@ -773,8 +817,16 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .hero-layout::after {
+        display: none;
+    }
+
     .intro-grid {
         grid-template-columns: 1fr;
+    }
+
+    .intro-grid::after {
+        display: none;
     }
 
     .hero-card {
