@@ -45,9 +45,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', (e) => {
+            const href = anchor.getAttribute('href');
+            if (!href) {
+                return;
+            }
+
+            const target = document.querySelector(href);
+            if (!target) {
+                return;
+            }
+
             e.preventDefault();
-            document.querySelector(anchor.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth',
+            target.scrollIntoView({
+                behavior: prefersReducedMotion ? 'auto' : 'smooth',
+                block: 'start',
             });
         });
     });
@@ -62,11 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-const scrollElement = document.documentElement;
-const maxScroll = scrollElement.scrollHeight - window.innerHeight;
-const currentScroll = window.pageYOffset || scrollElement.scrollTop || 0;
-const progress = maxScroll > 0 ? currentScroll / maxScroll : 0;
-          
+            const scrollElement = document.documentElement;
+            const maxScroll = scrollElement.scrollHeight - window.innerHeight;
+            const currentScroll = window.pageYOffset || scrollElement.scrollTop || 0;
+            const progress = maxScroll > 0 ? currentScroll / maxScroll : 0;
+
             const x = 50 + Math.sin(progress * Math.PI * 2) * 12;
             const y = 35 + progress * 30;
 

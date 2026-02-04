@@ -4,24 +4,53 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Оплата успішна</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Recursive:wght@300;400;500;600;700;800&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="success-page">
-    <main class="container">
+  <body>
+    <div class="bg" aria-hidden="true">
+      <div class="bg__mesh" id="liquidBg"></div>
+      <div class="bg__grid"></div>
+      <div class="bg__pixels"></div>
+      <div class="bg__grain"></div>
+    </div>
+
+    <main class="page">
       <section class="hero">
-        <div class="hero__grid">
-          <div class="hero__content">
-            <h1>Дякуємо, ваш платіж підтверджено!</h1>
-            <p>
-              У день події ми надішлемо на ваш е-мейл посилання за яким ви зможете приєднатись
-              до лекції. Бережіть себе і до зустрічі!
-            </p>
-            <div class="hero__actions">
-              <a class="btn btn-secondary" href="/">Повернутися на головну</a>
+        <div class="container">
+          <div class="grid hero__grid">
+            <div class="hero__main">
+              <h1>Дякуємо, ваш платіж підтверджено!</h1>
+              <p>
+                У день події ми надішлемо на ваш е-мейл посилання за яким ви зможете приєднатись
+                до лекції. Бережіть себе і до зустрічі!
+              </p>
+              <div class="hero__actions">
+                <a class="btn btn-secondary" href="/">Повернутися на головну</a>
+              </div>
             </div>
+
+            <aside class="hero__side" aria-hidden="true">
+              <div class="panel panel--deco">
+                <div class="deco-cube"></div>
+                <div class="deco-sticker">
+                  <div class="deco-sticker__row"></div>
+                  <div class="deco-sticker__row"></div>
+                  <div class="deco-sticker__row"></div>
+                </div>
+                <div class="deco-orb"></div>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
     </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
