@@ -13,50 +13,51 @@
 </head>
 <body>
   <main class="page">
-    <div class="scanlines" aria-hidden="true"></div>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="gridlines" aria-hidden="true"></div>
 
     <header class="hero" id="top">
-      <div class="wrap hero__wrap">
-        <div class="hero__mast">
-          <div class="chip chip--pixel">ДЕМОНСТРАЦІЙНА ОНЛАЙН-ЛЕКЦІЯ</div>
-          <div class="hero__tags">
-            <span class="tag">30 січня 2026</span>
-            <span class="tag">18:00 · Zoom</span>
-            <span class="tag">2 години + Q&amp;A</span>
-          </div>
+      <div class="wrap">
+        <div class="hero__rail">
+          <div class="rail__unit">30.01.2026</div>
+          <div class="rail__unit">18:00 · ZOOM</div>
+          <div class="rail__unit">2H + Q&amp;A</div>
+          <div class="rail__unit rail__unit--accent">LIVE</div>
         </div>
 
-        <div class="hero__grid">
-          <div class="hero__content">
+        <div class="hero__main">
+          <div class="hero__copy">
+            <div class="chip chip--pixel">ДЕМОНСТРАЦІЙНА ОНЛАЙН-ЛЕКЦІЯ</div>
             <h1 class="hero__title">
               Режисерські принципи<br>
               в <span class="accent">AI генерації відео</span>
             </h1>
             <p class="hero__subtitle">або як створювати якісні ролики разом з ШІ</p>
 
-            <div class="hero__cta">
+            <div class="hero__actions">
               <a class="btn btn--primary" href="#registration">Оплатити участь</a>
-              <a class="btn btn--ghost" href="#benefits">Дізнатися більше</a>
+              <a class="btn btn--ghost" href="#brief">Дізнатися більше</a>
             </div>
 
-            <div class="hero__signal" aria-hidden="true">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
+            <div class="hero__ticks" aria-hidden="true">
+              <span class="tick"></span>
+              <span class="tick"></span>
+              <span class="tick"></span>
+              <span class="tick"></span>
             </div>
           </div>
 
-          <aside class="hero__console" aria-hidden="true">
-            <div class="console">
-              <div class="console__head">
-                <span class="console__label">NODE/AI-LAB</span>
-                <span class="console__status">SYNC ONLINE</span>
+          <aside class="hero__lab" aria-hidden="true">
+            <div class="lab">
+              <div class="lab__header">
+                <span>NODE: AI-LAB</span>
+                <span class="lab__status">SYNC ONLINE</span>
               </div>
-              <div class="console__body">
-                <div class="console__grid"></div>
+              <div class="lab__core">
+                <div class="lab__grid"></div>
                 <canvas class="morph" id="morphCanvas" width="720" height="720"></canvas>
               </div>
-              <div class="console__foot">
+              <div class="lab__footer">
                 <span>FRAME: 26x26</span>
                 <span>OUTPUT: PIXEL-MORPH</span>
               </div>
@@ -65,6 +66,42 @@
         </div>
       </div>
     </header>
+
+    <section class="section section--brief" id="brief">
+      <div class="wrap">
+        <div class="section__head">
+          <div class="eyebrow">КОНЦЕПТ</div>
+          <h2 class="h2">Чому ця лекція працює</h2>
+        </div>
+
+        <div class="brief">
+          <div class="brief__panel brief__panel--wide">
+            <p class="lead">
+              За майже чотири роки експериментів з різними AI інструментами я зрозумів, що у цьому невловимому темпі розвитку вони є <strong>другорядними</strong>
+            </p>
+          </div>
+          <div class="brief__panel">
+            <p>
+              <span class="accent-strong">Простого знання інтерфейсу ШІ генераторів і копіювання готових промптів не достатньо</span>
+              для отримання систематично якісного результату. AI може бути вашим помічником, ментором, колегою, або цілою знімальною командою, але без розуміння базових принципів процесу кіновиробництва навіть маючи в підпорядкуванні команду голівудських кіноробів вам навряд чи вдасться зняти хороше кіно
+            </p>
+          </div>
+          <div class="brief__panel">
+            <p>
+              Саме так я сприймаю <span class="accent-strong">ШІ інструменти</span>, для мене це <span class="accent-strong">команда професіоналів кіноіндустрії</span> з якою я співпрацюю як режисер.
+            </p>
+          </div>
+          <div class="brief__panel brief__panel--accent">
+            <div class="callout">
+              <div class="callout__frame" aria-hidden="true"></div>
+              <p>
+                <span class="accent-strong">17 річний досвід у відеопродакшені допоміг мені розробити базові принципи використання генеративного ШІ</span>, який залишиться актуальним незалежно від того як змінюватимуться окремі інструменти. Розуміння і застосування цих принципів дозволяє робити <span class="accent-strong">якісний контент, а не AI-slop</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="section section--metrics">
       <div class="wrap">
@@ -123,42 +160,6 @@
           <div class="benefit" role="listitem">
             <div class="benefit__icon" aria-hidden="true">☕</div>
             <div class="benefit__text">Відчуття вдало інвестованого часу в нові знання за ціною двох кав ☕☕ з тортиком 🍰</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="intro">
-      <div class="wrap">
-        <div class="section__head">
-          <div class="eyebrow">КОНЦЕПТ</div>
-          <h2 class="h2">Чому ця лекція працює</h2>
-        </div>
-
-        <div class="story">
-          <div class="story__panel">
-            <p class="lead">
-              За майже чотири роки експериментів з різними AI інструментами я зрозумів, що у цьому невловимому темпі розвитку вони є <strong>другорядними</strong>
-            </p>
-          </div>
-          <div class="story__panel">
-            <p>
-              <span class="accent-strong">Простого знання інтерфейсу ШІ генераторів і копіювання готових промптів не достатньо</span>
-              для отримання систематично якісного результату. AI може бути вашим помічником, ментором, колегою, або цілою знімальною командою, але без розуміння базових принципів процесу кіновиробництва навіть маючи в підпорядкуванні команду голівудських кіноробів вам навряд чи вдасться зняти хороше кіно
-            </p>
-          </div>
-          <div class="story__panel">
-            <p>
-              Саме так я сприймаю <span class="accent-strong">ШІ інструменти</span>, для мене це <span class="accent-strong">команда професіоналів кіноіндустрії</span> з якою я співпрацюю як режисер.
-            </p>
-          </div>
-          <div class="story__panel story__panel--accent">
-            <div class="callout">
-              <div class="callout__frame" aria-hidden="true"></div>
-              <p>
-                <span class="accent-strong">17 річний досвід у відеопродакшені допоміг мені розробити базові принципи використання генеративного ШІ</span>, який залишиться актуальним незалежно від того як змінюватимуться окремі інструменти. Розуміння і застосування цих принципів дозволяє робити <span class="accent-strong">якісний контент, а не AI-slop</span>
-              </p>
-            </div>
           </div>
         </div>
       </div>
