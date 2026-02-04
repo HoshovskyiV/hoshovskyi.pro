@@ -7,29 +7,11 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;800&family=Readex+Pro:wght@300;400;500;600&family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&family=Press+Start+2P&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="scene" aria-hidden="true">
-    <div class="scene__grid"></div>
-    <div class="scene__grain"></div>
-    <div class="scene__glow scene__glow--a"></div>
-    <div class="scene__glow scene__glow--b"></div>
-
-    <div class="scene__pixels">
-      <span class="px px--a"></span>
-      <span class="px px--b"></span>
-      <span class="px px--c"></span>
-    </div>
-
-    <div class="scene__objects">
-      <div class="orb"></div>
-      <div class="cube"></div>
-    </div>
-  </div>
-
   <main class="page">
     <header class="hero">
       <div class="wrap">
@@ -61,11 +43,28 @@
             </div>
           </div>
 
-          <div class="hero__panel" aria-hidden="true">
-            <div class="panel panel--a"></div>
-            <div class="panel panel--b"></div>
-            <div class="panel panel--c"></div>
-          </div>
+          <aside class="hero__panel" aria-hidden="true">
+            <div class="board">
+              <div class="board__top">
+                <div class="board__badge"></div>
+                <div class="board__pixels" aria-hidden="true">
+                  <span class="pix"></span><span class="pix"></span><span class="pix"></span><span class="pix"></span>
+                  <span class="pix"></span><span class="pix"></span><span class="pix"></span><span class="pix"></span>
+                </div>
+              </div>
+
+              <canvas class="morph" id="morphCanvas" width="720" height="720"></canvas>
+
+              <div class="board__bottom">
+                <div class="chip"></div>
+                <div class="cube3d" aria-hidden="true">
+                  <div class="cube3d__face cube3d__face--front"></div>
+                  <div class="cube3d__face cube3d__face--right"></div>
+                  <div class="cube3d__face cube3d__face--top"></div>
+                </div>
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </header>
