@@ -1005,6 +1005,48 @@ a:focus-visible {
   z-index: 20;
 }
 
+/* Badge (Finalist / Winner) */
+.v-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: var(--yellow);
+  color: #000;
+  padding: 8px 10px;
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  line-height: 1;
+  text-transform: uppercase;
+  z-index: 30;
+  box-shadow: 4px 4px 0 var(--magenta);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+  /* Let clicks pass through to video */
+  transform: translate(0, 0);
+  animation: badge-bounce 2s infinite ease-in-out;
+}
+
+@keyframes badge-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.v-icon-crown {
+  width: 14px;
+  height: 14px;
+  image-rendering: pixelated;
+  /* Simple pixel crown via box-shadow or just generic shape? allow SVG in HTML */
+}
+
 /* Metadata Overlay */
 .v-meta {
   position: absolute;
