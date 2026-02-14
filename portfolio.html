@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vasyl Hoshovskyi - Director's Portfolio</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&family=Press+Start+2P&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&family=Press+Start+2P&display=swap"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body class="portfolio-page">
 
   <header class="p-header">
@@ -69,7 +73,8 @@
     <!-- Block 5: Ozon Village (Placeholder) -->
     <div class="v-block v-block--std" onclick="alert('Video link pending')">
       <!-- Using a placeholder image or generic reliable image since we lack an ID -->
-      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Ozon Village" class="v-thumb" style="filter: grayscale(100%) contrast(1.2);">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop"
+        alt="Ozon Village" class="v-thumb" style="filter: grayscale(100%) contrast(1.2);">
       <div class="v-play-btn">▶</div>
       <div class="v-meta">
         <h2 class="v-title">Ozon Village</h2>
@@ -80,10 +85,11 @@
 
     <!-- Block 6: Showreel -->
     <div class="v-block v-block--std" onclick="loadVideo(this, 'T9ZYRXDCKoE')">
-      <img src="https://img.youtube.com/vi/T9ZYRXDCKoE/maxresdefault.jpg" alt="Director's Showreel" class="v-thumb">
-      <div class="v-play-btn">▶</div>
+      <div class="v-thumb"
+        style="width:100%; height:100%; background: radial-gradient(circle at center, #2a2a2a 0%, #080808 100%);"></div>
+      <div class="v-play-btn" style="opacity: 1; transform: translate(-50%, -50%) scale(1.1);">▶</div>
       <div class="v-meta">
-        <h2 class="v-title">Director's Showreel</h2>
+        <h2 class="v-title">Animation Commercial Compilation</h2>
         <div class="v-role">Compilation</div>
         <div class="v-note">Mixed Media</div>
       </div>
@@ -97,7 +103,7 @@
   <script>
     function loadVideo(element, videoId) {
       if (!videoId) return;
-      
+
       // Create iframe
       const iframe = document.createElement('iframe');
       iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`);
@@ -110,10 +116,11 @@
       // Clear contents and append iframe
       // element.innerHTML = ''; // Don't clear everything, we lose structure style references if handled poorly, but here we just want to replace content.
       // Better: Append and hide others.
-      
+
       element.appendChild(iframe);
       element.classList.add('is-playing');
     }
   </script>
 </body>
+
 </html>
