@@ -1047,6 +1047,17 @@ a:focus-visible {
   /* Simple pixel crown via box-shadow or just generic shape? allow SVG in HTML */
 }
 
+@media (max-width: 768px) {
+  .v-badge-text {
+    display: none;
+  }
+
+  .v-badge {
+    padding: 6px;
+    /* Smaller padding for icon only */
+  }
+}
+
 /* Metadata Overlay */
 .v-meta {
   position: absolute;
