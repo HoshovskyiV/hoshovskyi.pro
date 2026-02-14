@@ -1,112 +1,119 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Портфоліо відеопроєктів</title>
-
+  <title>Vasyl Hoshovskyi - Director's Portfolio</title>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&family=Press+Start+2P&display=swap" rel="stylesheet">
-
+  
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="page--alt">
+<body class="portfolio-page">
 
-  <main class="page">
-    <header class="hero hero--compact">
-      <div class="wrap">
-        <div class="hero__layout hero__layout--single">
-          <div class="hero__text">
-            <div class="kicker">ПОРТФОЛІО</div>
-            <h1 class="headline">Відеопроєкти</h1>
-            <p class="subhead">
-              Добірка робіт у рекламному продакшені, клієнтських відео та експериментах
-              з AI-генерацією. Натисніть, щоб переглянути відео.
-            </p>
-            <div class="cta">
-              <a class="btn btn--ghost" href="/">Повернутися на головну</a>
-            </div>
-          </div>
-        </div>
+  <header class="p-header">
+    <div class="p-brand">
+      <h1 class="p-title">Vasyl Hoshovskyi</h1>
+      <div class="p-subtitle">Director / Producer / AI Artist</div>
+    </div>
+    <div class="p-tagline">"Hybrid Production: Human Creativity × Artificial Intelligence"</div>
+  </header>
+
+  <main class="video-wall">
+    <!-- Block 1: Battle Ravens -->
+    <div class="v-block v-block--large" onclick="loadVideo(this, 'LW7n1m8R3C0')">
+      <img src="https://img.youtube.com/vi/LW7n1m8R3C0/maxresdefault.jpg" alt="Battle Ravens" class="v-thumb">
+      <div class="v-play-btn">▶</div>
+      <div class="v-meta">
+        <h2 class="v-title">Battle Ravens: 102 TDF Brigade</h2>
+        <div class="v-role">Director & Art Director</div>
+        <div class="v-note">AI-generated animation. Winner of UCS 2025.</div>
       </div>
-    </header>
+    </div>
 
-    <section class="section">
-      <div class="wrap">
-        <div class="section__head">
-          <div class="label">РОБОТИ</div>
-          <h2 class="h2">Карусель кейсів</h2>
-          <p class="muted">Гортайте вправо, щоб переглянути всі проєкти.</p>
-        </div>
-
-        <div class="carousel-frame" data-carousel aria-label="Карусель відеопроєктів">
-          <button class="carousel-button carousel-button--left" data-carousel-prev type="button" aria-label="Попередній проєкт">←</button>
-
-          <div class="carousel-track">
-            <article class="carousel__item">
-              <div class="carousel__video">
-                <iframe
-                  title="Комерційний ролик для бренду"
-                  src="https://www.youtube.com/embed/ysz5S6PUM-U"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
-              </div>
-              <div class="carousel__content">
-                <h3>Комерційний ролик для бренду</h3>
-                <p>60 секунд динамічної історії. Режисура, зйомка та повний продакшн під ключ.</p>
-              </div>
-            </article>
-
-            <article class="carousel__item">
-              <div class="carousel__video">
-                <iframe
-                  title="AI-експериментальний кліп"
-                  src="https://www.youtube.com/embed/ScMzIvxBSi4"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
-              </div>
-              <div class="carousel__content">
-                <h3>AI-експериментальний кліп</h3>
-                <p>Експеримент з AI-генерацією кадрів, динамічний монтаж та музичний настрій.</p>
-              </div>
-            </article>
-
-            <article class="carousel__item">
-              <div class="carousel__video">
-                <iframe
-                  title="Корпоративне відео"
-                  src="https://www.youtube.com/embed/jNQXAC9IVRw"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
-              </div>
-              <div class="carousel__content">
-                <h3>Корпоративне відео</h3>
-                <p>Дворівневий сценарій та режисура для історії про команду, продукт і цінності.</p>
-              </div>
-            </article>
-
-            <article class="carousel__item">
-              <div class="carousel__video">
-                <iframe
-                  title="AI-концепт рекламної кампанії"
-                  src="https://www.youtube.com/embed/tgbNymZ7vqY"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowfullscreen></iframe>
-              </div>
-              <div class="carousel__content">
-                <h3>AI-концепт рекламної кампанії</h3>
-                <p>Серія тизерів з AI-графікою, швидкі переходи та акцент на продукті.</p>
-              </div>
-            </article>
-          </div>
-
-          <button class="carousel-button carousel-button--right" data-carousel-next type="button" aria-label="Наступний проєкт">→</button>
-        </div>
+    <!-- Block 2: ARVI VR -->
+    <div class="v-block v-block--std" onclick="loadVideo(this, 'Nqz2GruY35I')">
+      <img src="https://img.youtube.com/vi/Nqz2GruY35I/maxresdefault.jpg" alt="ARVI VR" class="v-thumb">
+      <div class="v-play-btn">▶</div>
+      <div class="v-meta">
+        <h2 class="v-title">ARVI VR: Arena Promo</h2>
+        <div class="v-role">Director & Creative Director</div>
+        <div class="v-note">3D Animation / Gaming</div>
       </div>
-    </section>
+    </div>
+
+    <!-- Block 3: Comfy App -->
+    <div class="v-block v-block--std" onclick="loadVideo(this, 'fwwV8UPc7bU')">
+      <img src="https://img.youtube.com/vi/fwwV8UPc7bU/maxresdefault.jpg" alt="Comfy App" class="v-thumb">
+      <div class="v-play-btn">▶</div>
+      <div class="v-meta">
+        <h2 class="v-title">Comfy App Commercial</h2>
+        <div class="v-role">Director & Creative Director</div>
+        <div class="v-note">2D Animation / Retail</div>
+      </div>
+    </div>
+
+    <!-- Block 4: Revera FC -->
+    <div class="v-block v-block--std" onclick="loadVideo(this, 'J-VvWpLWR6Y')">
+      <img src="https://img.youtube.com/vi/J-VvWpLWR6Y/maxresdefault.jpg" alt="Revera Football Club" class="v-thumb">
+      <div class="v-play-btn">▶</div>
+      <div class="v-meta">
+        <h2 class="v-title">Revera Football Club: Rebirth</h2>
+        <div class="v-role">Director & Creative Director</div>
+        <div class="v-note">Sports Promo / Branding</div>
+      </div>
+    </div>
+
+    <!-- Block 5: Ozon Village (Placeholder) -->
+    <div class="v-block v-block--std" onclick="alert('Video link pending')">
+      <!-- Using a placeholder image or generic reliable image since we lack an ID -->
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Ozon Village" class="v-thumb" style="filter: grayscale(100%) contrast(1.2);">
+      <div class="v-play-btn">▶</div>
+      <div class="v-meta">
+        <h2 class="v-title">Ozon Village</h2>
+        <div class="v-role">Director & Creative Director</div>
+        <div class="v-note">Real Estate Promo (Coming Soon)</div>
+      </div>
+    </div>
+
+    <!-- Block 6: Showreel -->
+    <div class="v-block v-block--std" onclick="loadVideo(this, 'T9ZYRXDCKoE')">
+      <img src="https://img.youtube.com/vi/T9ZYRXDCKoE/maxresdefault.jpg" alt="Director's Showreel" class="v-thumb">
+      <div class="v-play-btn">▶</div>
+      <div class="v-meta">
+        <h2 class="v-title">Director's Showreel</h2>
+        <div class="v-role">Compilation</div>
+        <div class="v-note">Mixed Media</div>
+      </div>
+    </div>
   </main>
 
-  <script src="script.js"></script>
+  <footer class="p-footer">
+    &copy; 2025 Vasyl Hoshovskyi. All Rights Reserved.
+  </footer>
+
+  <script>
+    function loadVideo(element, videoId) {
+      if (!videoId) return;
+      
+      // Create iframe
+      const iframe = document.createElement('iframe');
+      iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`);
+      iframe.setAttribute('title', 'YouTube video player');
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+      iframe.setAttribute('allowfullscreen', 'true');
+      iframe.className = 'v-embed';
+
+      // Clear contents and append iframe
+      // element.innerHTML = ''; // Don't clear everything, we lose structure style references if handled poorly, but here we just want to replace content.
+      // Better: Append and hide others.
+      
+      element.appendChild(iframe);
+      element.classList.add('is-playing');
+    }
+  </script>
 </body>
 </html>
